@@ -9,7 +9,7 @@ Details of how to get setup can be found on the [prerequisites page](PREREQ.md).
 This section will take you through installing the prerequisite software on your machine.
 
 - Estimated duration: 15 min
-- Practical: [**Prerequisite Install and setup**](PREREQ.md)
+- Practical: [**Installing Prerequisites and Setup**](PREREQ.md)
 
 ## Introduction to the ESP8266
 

@@ -1,14 +1,14 @@
-# Installing the prerequisite software and getting your cloud account setup
+# Installing Prerequisites and Setup
 
 ## Lab Objectives
 
 This Lab will ensure you have all the resources and software needed to complete the lab installed.  You should follow the instructions for your OS and complete all sections of the setup before moving forward with the Lab.
 
-## ESP8266 development
+## ESP8266 Development
 
 To be able to complete the workshop you need install the required software to your laptop or workstation. 
 
-### WiFi
+### WiFi Connectivity
 
 The ESP8266 can connect to a 2.4GHz network supporting 802.11 b/g/n.  The ESP8266 will not work with 5GHz frequencies (802.11 ac).
 
@@ -24,7 +24,7 @@ There are no incoming ports needed for the workshop, but the ESP8266 needs to be
 
 ### Purchasing the required Hardware
 
-You need to purchase the following hardware to work through the workshop.  The workshop instructions uses the DHT11 temperature and humidity sensor.  This can be replaced with the DHT22 sensor, which has the same pinout, but offers a more accurate sensor.  DHT11 is accurate within 2C, whilst the DHT22 is accurate to within 0.5C.
+You need the following hardware to work through the workshop:
 
 - ESP8266, (search for **NodeMCU ESP8266 v3** or **v2**)
 - NeoPixel RGB LED (or any other chainable RGB/RGBW LED based on ws2812b or sk6812 chips ), such as [this from Adafruit](https://www.adafruit.com/product/1734) (Search for **Neopixel 8mm or 5mm** - often sold in packs of 5)
@@ -32,41 +32,61 @@ You need to purchase the following hardware to work through the workshop.  The w
 - 6 x Female to Female jumper wires (search for **dupont cable f2f or f-f** - usually sold in packs of 40 cables)
 - MicroUSB cable (Please ensure it is a data cable, not just a power cable)
 
-## Installing the required software
+The workshop instructions uses the DHT11 temperature and humidity sensor.  This can be replaced with the DHT22 sensor, which has the same pinout, but offers a more accurate sensor.  DHT11 is accurate within 2C, whilst the DHT22 is accurate to within 0.5C.
+
+## Installing the Required Software
 
 The following instructions have been tested against Linux (Ubuntu 18.04LTS and Fedora 27), MacOS (High Sierra) and Windows 10.  If you are using a different OS then you may need to adapt the instructions to match your installed OS.
 
 You may need admin access to your workstation to be able to install the software and drivers.
 
-### Step 1 - Install the required drivers
+### Step 1 - Install Drivers
 
 If you are using the kit given to you in the B31TF laboratory, then the boards you will be using are branded LoLin and use the CH340 USB to serial chip.
 
 You may need a driver for your OS to be able to communicate with the USB to serial CH340G chip used in the ESP8266 modules.  Do not plugin the device until you have installed the driver on Windows and Mac.  The drivers can be downloaded from :
 
-- [MacOS](http://www.wch.cn/download/CH341SER_MAC_ZIP.html) (This is the manufacturers web site, in Chinese, for the USB driver chip on the LoLin NodeNCU board - use Google Chrome to translate, or just click the download link to access the macOS driver).  **After installing goto System Preferences -> Security and Privacy to allow the driver to be loaded.**
-  - Alternatively if you use [homebrew](https://brew.sh) you can install the driver using command
 
-    ```bash
-    brew cask install homebrew/cask-drivers/wch-ch34x-usb-serial-driver
-    ```
+**macOS**
 
-- [**Win/Linux**](https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers)
+Link: [http://www.wch.cn/download/CH341SER_MAC_ZIP.html](http://www.wch.cn/download/CH341SER_MAC_ZIP.html)
 
-Select the appropriate one for your OS, download it, unzip it and install it.
+This is the manufacturers web site, in Chinese, for the USB driver chip on the LoLin NodeNCU board. Use Google Chrome to translate, or just click the download link to access the macOS driver.
 
-!!! note
-    Linux should not need a driver installing, as it should already be installed.
+After installing go to 'System Preferences -> Security and Privacy' to allow the driver to be loaded.
 
-If you have your own ESP8266 module then it may not use the CH340G USB to serial chip.  Another very popular chip is the CP2102, which is used in Amica branded boards.  The drivers for this chip can be found [**here**](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+Alternatively if you use [homebrew](https://brew.sh) you can install the driver using command:
+
+```
+bash
+brew cask install homebrew/cask-drivers/wch-ch34x-usb-serial-driver
+```
+
+If you have your own ESP8266 module then it may not use the CH340G USB to serial chip.  Another very popular chip is the CP2102, which is used in Amica branded boards. The drivers for this chip can be found [**here**](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 
 If you are a Mac user and use [homebrew](https://brew.sh) then the driver can be installed using command:
 
-```bash
+```
+bash
 brew cask install homebrew/cask-drivers/silicon-labs-vcp-driver
 ```
 
-On Mac after the install you may need to approve the driver.  From the Apple menu, go to **System Preferences -> Security and Privacy** to allow the driver to be loaded.
+**Windows / Linux**
+
+Link: [https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers](https://github.com/nodemcu/nodemcu-devkit/tree/master/Drivers)
+
+Select the appropriate one for your OS, download it, unzip it and install it.
+
+---
+**IMPORTANT**
+
+Linux should not need a driver installing, as it should already be installed.
+
+---
+
+If you have your own ESP8266 module then it may not use the CH340G USB to serial chip.  Another very popular chip is the CP2102, which is used in Amica branded boards. The drivers for this chip can be found [**here**](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+
+**All**
 
 When the driver is installed and the NodeMCU module is connected you can test if the driver is working:
 
