@@ -35,10 +35,6 @@ We have provided [**here**](RESOURCES.md) some suggestions on free-to-use MQTT b
 
 Alternatively, you may find other suitable MQTT brokers or IoT Cloud platforms providing their own MQTT broker as well as additional services, all-in-one, which may be convenient as you would not need to setup multiple accounts and use different dashboards for different services, e.g. see [here](https://www.record-evolution.de/en/6-free-iot-platforms-to-start-your-iot-project-in-2021/) and other links provided on Canvas.
 
-## Navigation
-
-To move through the different step of the assignment you can use the side panels to select a specific section or use the navigation links at the bottom of each page to move to the next or previous section as required.
-
 ## Access to Workshop Materials
 
 The source for this workshop is hosted on [GitHub](https://github.com/care-group/ESP866-IoT-Workshop) and this site is automatically generated from the Markdown in the GitHub repository.
