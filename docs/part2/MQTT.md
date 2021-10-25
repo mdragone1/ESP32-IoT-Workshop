@@ -138,7 +138,7 @@ You'd need to subscribe to the topic published by your device. After that, you s
 
 This is an opportunity to practice using wildcards when registering to a topic in MQTT. Think what'd you need to do, to view the updates from multiple devices. You can verify this, by asking other students to post the status updates from their devices to the same MQTT broker you use. 
  
-### Step 4 - How it works
+### Step 4 - How it Works
 
 When connecting a MQTT broker, there are some requirements on some parameters used when connecting.
 
