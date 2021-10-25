@@ -23,7 +23,7 @@ The assignment is split into 5 parts.  A typical workplan is shown below:
 
 To start the workshop navigate to the [ Part 1 Introduction](docs/part1/README.md).
 
-# Important Information
+## Important Information
 
 ### Stream Environmental Conditions to The Cloud
 
