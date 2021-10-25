@@ -59,7 +59,7 @@ The assignment is split into 4 parts.  A typical workplan is shown below:
 
 To start the workshop navigate to the [Part 1 Introduction](docs/part1/README.md).
 
-## Course outline
+## Course Outline
 
 ### [Part 1](docs/part1/README.md)
 

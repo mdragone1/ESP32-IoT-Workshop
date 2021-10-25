@@ -1,8 +1,8 @@
-# Creating the sensing application for the ESP8266
+# Creating the Initial Application
 
 ## Lab Objectives
 
-In this lab you will pull together all the information from part 1 into a single app.  You will learn:
+In this lab you will pull together all the information from Part 1 into a single app. You will learn:
 
 - How to create a new sketch and some recommendations for app structure
 - How to combine the WiFi, neopixel and DHT libraries into a single application
@@ -10,20 +10,24 @@ In this lab you will pull together all the information from part 1 into a single
 
 ## Introduction
 
-In part 1 you looked at a number of example sketches to see how the WiFi, NeoPixel LED and DHT sensors work with Arduino.  Now you will create an application combining all the features then as we work through the remainder of this part you will connect the device to the IoT platform and add code to send data to the platform and receive commands from the platform.  Initially you will use unsecured MQTT connections, then at the end of this section you will add SSL/TLS and certificate verification to secure the communication.
+In Part 1 you looked at a number of example sketches to see how the WiFi, NeoPixel LED and DHT sensors work with Arduino. Now you will create an application combining all the features then as we work through the remainder of this part you will connect the device to the IoT platform and add code to send data to the platform and receive commands from the platform. Initially you will use unsecured MQTT connections, then at the end of this section you will add SSL/TLS and certificate verification to secure the communication.
 
-### Step 1 - Create a new sketch
+### Step 1 - Create a New Sketch
 
-Create a new sketch in the Arduino IDE using *File* -> *New* or the icon in the tool bar.  The save the sketch *File* -> *Save* and name the sketch, suggested name **esp8266Workshop**.
+Create a new sketch in the Arduino IDE using *File* -> *New* or the icon in the tool bar. The save the sketch *File* -> *Save* and name the sketch, suggested name **esp8266Workshop**.
 
-You need to add 1 more library to the Arduino IDE to provide functions to handle the JSON data format.  When we start sending and receiving data from the IoT Platform the JSON data format will be used, so we can start using JSON now.  In the Library Manager (*Sketch* -> *Include Library* -> *Manage Libraries...*) search for **ArduinoJson** and install the latest version of the library.  
+You need to add one more library to the Arduino IDE to provide functions to handle the JSON data format. When we start sending and receiving data from the IoT Platform the JSON data format will be used, so we can start using JSON now. In the Library Manager (*Sketch* -> *Include Library* -> *Manage Libraries...*) search for **ArduinoJson** and install the latest version of the library. 
 
-!!! warning
-    You must have the latest version (6.x or higher) as the API changed from v5 to v6, so this code will not compile with v5 or earlier
+---
+**IMPORTANT**
 
-### Step 2 - Input the application code
+You must have the latest version (6.x or higher) as the API changed from v5 to v6, so this code will not compile with v5 or earlier.
 
-I've provided the code for the application below.  As you enter it (or cut and paste it) please take time to ensure you understand the application and what each of the library function calls do.
+---
+
+### Step 2 - Application Code
+
+Sample code for the application is provided below. As you enter it (or cut and paste it) please take time to ensure you understand the application and what each of the library function calls do.
 
 Add the code below to the sketch above the **setup()** function:
 
@@ -77,7 +81,7 @@ unsigned char b = 0; // LED Blue value
 
 ```
 
-The above code isolates all the configuration that may need to change.  I prefer to put all the config up front in an app, so it is easy to update as needed.  You will need to update the WiFI SSID and password to the WiFi network you want to connect to.  This should be available in the venue you are working in.
+The above code isolates all the configuration that may need to change. I prefer to put all the config up front in an app, so it is easy to update as needed. You will need to update the WiFI SSID and password to the WiFi network you want to connect to. This should be available in the venue you are working in.
 
 Add the following code to the **setup()** function:
 
@@ -139,11 +143,11 @@ void loop()
 }
 ```
 
-This code is called repeatedly after the **setup()** function returns.  It reads the humidity and temperature for the DHT sensor, validates it received the readings then sets the LED colour to the correct colour based on the temperature and the alert and warning temperatures defined in the constants at the top of the application.  Finally the temperature and humidity values are added to the JSON object, which is then converted to a string buffer and printed to the console.
+This code is called repeatedly after the **setup()** function returns. It reads the humidity and temperature for the DHT sensor, validates it received the readings then sets the LED colour to the correct colour based on the temperature and the alert and warning temperatures defined in the constants at the top of the application. Finally the temperature and humidity values are added to the JSON object, which is then converted to a string buffer and printed to the console.
 
-### Step 3 - Run the code and view output using the Serial Monitor
+### Step 3 - Running / Viewing Output in Serial Monitor
 
-Save, compile and upload the sketch.  Once uploaded open up the Serial Monitor and set the baud rate to 115200, to match the rate set in the Serial.begin(115200) message.  You should see the confirmation that the WiFi connection has been made and then you should see the sensor data formatted as a JSON string, repeating every 10 seconds (10000 milliseconds).
+Save, compile and upload the sketch. Once uploaded open up the Serial Monitor and set the baud rate to 115200, to match the rate set in the Serial.begin(115200) message. You should see the confirmation that the WiFi connection has been made and then you should see the sensor data formatted as a JSON string, repeating every 10 seconds (10000 milliseconds).
 
 The LED should also be set to a colour based on the temperature and the WARN and ALARM constants defined at the top of the sketch :
 
@@ -153,9 +157,9 @@ The LED should also be set to a colour based on the temperature and the WARN and
 - YELLOW (between WARN_HOT and ALARM_HOT)
 - RED (above ALARM_HOT)
 
-### Step 4 - Understanding how to work with JSON data
+### Step 4 - Manipulating JSON Data
 
-JSON format is widely used for APIs and data exchange between systems.  The above sketch uses one of the optimised JSON libraries for small memory devices.  To use the library you need to:
+JSON format is widely used for APIs and data exchange between systems. The above sketch uses one of the optimised JSON libraries for small memory devices. To use the library you need to:
 
 1. Initialise the library and allocate some memory for the library to work with : `StaticJsonDocument<100> jsonDoc;`
 2. Create a new, empty JSON object : `JsonObject payload = jsonDoc.to<JsonObject>();`
@@ -170,3 +174,7 @@ JSON format is widely used for APIs and data exchange between systems.  The abov
 The **serializeJson()** function converts the JSON object to a string and writes it into the provided buffer, so it can be used as a c-string.
 
 See the library [documentation](https://arduinojson.org/v6/doc/) for additional functionality.
+
+---
+
+[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part2/)

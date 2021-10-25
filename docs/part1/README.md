@@ -1,4 +1,4 @@
-# Introduction
+# Part 1
 
 Before you can start working on this part you need to have some prerequisite software installed.
 
@@ -38,5 +38,3 @@ In this lab exercise you will learn how to connect the DHT temperature and humid
 
 - Estimated duration: 15 minutes
 - Practical: [**DHT Sensor**](DHT.md)
-
-

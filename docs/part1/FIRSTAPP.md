@@ -59,3 +59,7 @@ The Arduino IDE and runtime take care of the work needed to setup the runtime fo
 There is no operating system running under the Arduino application, the code you enter in setup and loop is all that is running on the ESP8266 CPU.
 
 This example sketch initialises the Serial connection in the **setup()** function then retrieves and prints information about the flash memory to the Serial console in the **loop()** function. At the end of the **loop()** function there is a delay for 5 seconds (5000 milliseconds). After the delay the **loop()** function ends, but is immediately called again.
+
+---
+
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)

@@ -181,3 +181,5 @@ There are 2 options for installing OpenSSL on Windows. You can install a binary 
 The first method will not provide the xxd binary, but you don't need it for this workshop. If you get an error saying **MSVCR120.dll** is missing, then you can download the Visual Studio 2013 redistibutable package [here](https://support.microsoft.com/en-us/help/3179560).
 
 ---
+
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)

@@ -46,3 +46,7 @@ Now you have seen 2 different example sketches using both Serial and WiFi connec
 - In the **loop()** function access features of the library
 
 If you finish early, jump back to Step 3 to add the additional functionality
+
+---
+
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)

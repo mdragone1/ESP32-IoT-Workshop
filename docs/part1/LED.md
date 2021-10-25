@@ -135,3 +135,7 @@ To add the NeoPixel to your own application you need to do the following:
 For any library installed with the Arduino Library Manager you can get to the documentation for the library using the **More info** link in the Library Manager:
 
 ![ModeMCU LED Wiring](../images/LibraryManagerInfo.png)
+
+---
+
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)

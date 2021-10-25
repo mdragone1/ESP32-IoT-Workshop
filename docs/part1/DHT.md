@@ -59,3 +59,7 @@ Note that by default temp is in C, but you can request to get a Fahrenheit tempe
 - `dht.readTemperature()`
 - `dht.readTemperature(bool isFahrenheit)`
 - `dht.readHumidity()`
+
+---
+
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)

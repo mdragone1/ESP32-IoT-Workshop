@@ -1,29 +1,29 @@
 # Part 2
 
-## Creating the initial application
+## Creating the Initial Application
 
-In this lab you will pull together all the information from part 1 into a single app.
-
-- Estimated duration: 15 min
-- practical [**Create ESP8266 application**](APP.md)
-
-## Introduction to the MQTT protocol
-
-In this lab you will learn how to add MQTT messaging to an application.
+In this lab exercise you will pull together all the information from part 1 into a single app.
 
 - Estimated duration: 15 min
-- practical [**Sending Data Using MQTT**](MQTT.md)
+- Practical: [**Create ESP8266 Application**](APP.md)
 
-## Introduction to IoT Security techniques
+## Introduction to the MQTT Protocol
 
-In this Lab you will modify MQTT to use a secure connection.
+In this lab exercise you will learn how to add MQTT messaging to an application.
+
+- Estimated duration: 15 min
+- Practical: [**Sending Data Using MQTT**](MQTT.md)
+
+## Introduction to IoT Security Techniques
+
+In this lab exercise you will modify MQTT to use a secure connection.
 
 - Estimated duration: 25 min
-- practical [**Securing the MQTT traffic using self-signed certificate**](CERT1.md)
+- Practical: [**Securing MQTT Traffic Using Self-Signed Certificate**](CERT1.md)
 
-## Adding client certificates
+## Adding Client Certificates
 
-In this lab you will extend the application by enabling client side certificates.
+In this lab exercise you will extend the application by enabling client side certificates.
 
 - Estimated duration: 10 min
-- practical [**Securing the MQTT traffic using a client certificate**](CERT2.md)
+- Practical: [**Securing MQTT Traffic Using a Client Certificate**](CERT2.md)

@@ -454,3 +454,7 @@ void loop() {
   }
 }
 ```
+
+---
+
+[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part2/)
