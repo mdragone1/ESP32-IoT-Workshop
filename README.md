@@ -49,11 +49,11 @@ The assignment is split into 4 parts.  A typical workplan is shown below:
 | Week 8     |  [Part 1](docs/part1/README.md)  |
 |            |  [Part 2](docs/part2/README.md)  |
 | Week 9     |  [Part 2](docs/part2/README.md)  |
-|            |  [Part 3](docs/part3/README.md)  |
-| Week 10    |  [Part 3](docs/part3/README.md)  |
-|            |  [Part 4](docs/part4/README.md)  |
-| Week 11    |  [Part 4](docs/part4/README.md)  |
-|            |  [Part 5](docs/part5/README.md)  |
+|            |  Part 3 _(available soon)_         |
+| Week 10    |  Part 3 _(available soon)_         |
+|            |  Part 4 _(available soon)_         |
+| Week 11    |  Part 4 _(available soon)_         |
+|            |  Part 5 _(available soon)_         |
 | Week 12    |                                  |
 | Week 13    |  Final report due!               |
 
@@ -73,7 +73,7 @@ The second part of the assignment requires you to look at how you can connect a 
 
 Optional: You could investigate how to ensure a secure connection between the device and your cloud platform, using SSL/TLS security and certificates.
 
-### [Part 3](docs/part3/README.md)
+### Part 3 _(available soon)_
 
 In this section we look at using a low-code cloud-based development environment called Node-RED to implement the server side part of the IoT solution.  
 
@@ -81,11 +81,11 @@ You will need to create a dashboard to visualise the IoT data and also provide c
 
 Your server side application will also control the LED attached to the ESP8266.
 
-### [Part 4](docs/part4/README.md)
+### Part 4 _(available soon)_
 
 In this section of the workshop looks at how useful information can be extracted from the IoT data using analytics.  
 
-### [Part 5](docs/part5/README.md)
+### Part 5 _(available soon)_
 
 The last part of the workshop asks you to examine and improve the energy efficiency of your system.
 
