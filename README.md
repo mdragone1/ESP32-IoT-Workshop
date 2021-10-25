@@ -6,7 +6,7 @@ This material is designed to guide you in your B31TF Sensors, Actuators &amp; Io
 
 Based on IBM workshop (not longer being mantained): [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
 
-## Workplan
+## Workplan
 
 The assignment is split into 5 parts.  A typical workplan is shown below:
 
