@@ -1,4 +1,4 @@
-# Connecting Device to the Watson IoT Platform using MQTT
+# Sending Data Using MQTT
 
 ## Lab Objectives
 

@@ -12,7 +12,7 @@ In this lab you will pull together all the information from part 1 into a single
 In this lab you will learn how to add MQTT messaging to an application.
 
 - Estimated duration: 15 min
-- practical [**Sending data to the Watson IoT platform using MQTT**](MQTT.md)
+- practical [**Sending Data Using MQTT**](MQTT.md)
 
 ## Introduction to IoT Security techniques
 
