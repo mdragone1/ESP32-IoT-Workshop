@@ -36,7 +36,7 @@ If you have a DHT mounted on a module then you need to check the pinout, usually
 
 ![DHT module](../images/DHTmodule.png){style="width: 30%" .center}
 
-### Step 3 - Load an example sketch showing how to use the DHT sensor
+### Step 3 - Load an Example Sketch
 
 To see how to use the DHT sensor there is an example sketch. *File* -> *Examples* -> *DHT Sensor Library* -> *DHTtester*. You need to make a couple of changes before you can run the sketch:
 
@@ -45,7 +45,7 @@ To see how to use the DHT sensor there is an example sketch. *File* -> *Examples
 
 When you save the sketch you will need to save it to your Arduino directory as you can't modify the example source. Once saved you can now compile and upload the sketch. This sketch uses Serial output to print out the values read, so you will need to open the Serial monitor and set the baud rate to match the Serial.begin() line in the sketch = 9600.
 
-### Step 4 - Understanding the DHT sensor library
+### Step 4 - Understanding the DHT Sensor Library
 
 To add the DHT sensor to your own application you need to do the following:
 

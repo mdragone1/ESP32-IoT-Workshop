@@ -18,7 +18,7 @@ Node.js application that provides a visual programming editor that makes it easy
 
 ### Step 1 - Create an account for Node-RED from a suitable cloud provider
 
-You can get a free Node-RED instance from [FRED(Free Node-RED)](https://users.sensetecnic.com/app/services)
+You can get a free Node-RED instance from [FRED (Free Node-RED)](https://users.sensetecnic.com/app/services)
 It should take a couple of minutes to create an account (no credit card needed) and start Node-RED
 
 - The Node-RED Visual Programming Editor will open with a default flow
