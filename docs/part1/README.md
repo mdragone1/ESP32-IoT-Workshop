@@ -23,7 +23,7 @@ This lab exercise will show you how to use the Arduino IDE with the ESP8266 plug
 This lab exercise will show you how to connection your ESP8266 to a local WiFi network. This Lab will also introduce the Serial Monitor, which allows you to see output from a running application.
 
 - Estimated duration: 15 min
-- Practical: [**WIFI scanning and connectivity**](WIFI.md)
+- Practical: [**WiFi Scanning and Connectivity**](WIFI.md)
 
 ## LED Light - Sample App
 

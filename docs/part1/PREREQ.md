@@ -2,7 +2,7 @@
 
 ## Lab Objectives
 
-This Lab will ensure you have all the resources and software needed to complete the lab installed. You should follow the instructions for your OS and complete all sections of the setup before moving forward with the Lab.
+This lab will ensure you have all the resources and software needed to complete the lab installed. You should follow the instructions for your OS and complete all sections of the setup before moving forward with the Lab.
 
 ## ESP8266 Development
 
