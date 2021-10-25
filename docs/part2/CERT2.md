@@ -1,4 +1,4 @@
-# Using a Device Certificate to authenticate to the Watson IoT platform
+# Securing MQTT Traffic Using a Client Certificate
 
 ## Lab Objectives
 
@@ -10,7 +10,7 @@ In this lab you will extend the application by enabling client side certificates
 
 Note that this information is provided as example. You should study the instructions provided by your MQTT broker / Cloud platform.
 
-### Step 1 - INFORMATION ONLY - Generating the key and certificate for a device
+### Step 1 - Generating the Key and Certificate for a Device (FOR INFORMATION ONLY)
 
 The script file you ran in the previous section has already generated the client certificates for you by running the commands shown below:
 
@@ -28,13 +28,13 @@ openssl rsa -in SecuredDev01_key.pem -passin pass:password123 -out SecuredDev01_
 openssl x509 -outform der -in SecuredDev01_crt.pem -out SecuredDev01_crt.der
 ```
 
-You will notice that the client certificate contains the client ID in the CN property of the certificate subject field.  This is how the certificate identifies the client to the server.  The Watson IoT platform requires the Client ID to be in the form of d:[*device type*]:[*device ID*].
+You will notice that the client certificate contains the client ID in the CN property of the certificate subject field. This is how the certificate identifies the client to the server. The Watson IoT platform requires the Client ID to be in the form of d:[*device type*]:[*device ID*].
 
-### Step 2 - Upload the certificate and key to the ESP8266 device
+### Step 2 - Upload the Certificate and Key to the ESP8266 Device
 
-You need to add the private key (SecuredDev01_key_nopass.pem) and the certificate (SecuredDev01_crt.pem) to the data folder inside the sketch folder then run the data uploader tool (*Tools* -> *ESP8266 LittleFS Data Upload*) to install the certificates on the device filesystem.  The SSL library on the ESP does not provide a mechanism to enter a password for the key, so the version of the key without the password needs to be provided.  Remember to close the Serial Monitor window before running the data upload tool.
+You need to add the private key (SecuredDev01_key_nopass.pem) and the certificate (SecuredDev01_crt.pem) to the data folder inside the sketch folder then run the data uploader tool (*Tools* -> *ESP8266 LittleFS Data Upload*) to install the certificates on the device filesystem. The SSL library on the ESP does not provide a mechanism to enter a password for the key, so the version of the key without the password needs to be provided. Remember to close the Serial Monitor window before running the data upload tool.
 
-### Step 3 - Modify the application to use the client certificate and key
+### Step 3 - Modify the Application to Use the Client Certificate and Key
 
 Now you can modify the code to load the certificates and add them to the connection:
 
@@ -112,13 +112,14 @@ then update the code within the setup() function to load the additional key and 
   wifiClient.setClientRSACert(clientCert, clientKey);
 ```
 
-### Step 4 - Run the application
+### Step 4 - Run the Application
 
 Save, compile and upload the sketch to the device and verify the device connects.
 
-### Step 5 - Configure the security policy on the IoT platform
+### Step 5 - Configure the Security Policy on the IoT Platform
 
-You now have client certificates working with the device, so can now choose how you want devices to be verified.  
+You now have client certificates working with the device, so can now choose how you want devices to be verified. 
+
 Note that you have to configure the connectivity settings for your IoT broker, or connect to one of the available services provided by a public MQTT broker such as
 mosquitto, to fit the authorisation style of your applications, such as:
 
@@ -128,12 +129,12 @@ mosquitto, to fit the authorisation style of your applications, such as:
 - TLS with Client Certificate AND Token Authentication
 - TLS with Client Certificate OR Token Authentication
 
-You can now decide what policy you want.  If you don't want to use Token Authentication then change the **connect()** function call and omit the user and token information:
+You can now decide what policy you want. If you don't want to use Token Authentication then change the **connect()** function call and omit the user and token information:
 
 - with token authentication : `if (mqtt.connect(MQTT_DEVICEID, MQTT_USER, MQTT_TOKEN)) {`
 - without token authentication : `if (mqtt.connect(MQTT_DEVICEID)) {`
 
-You will also see that you can create Custom Rules in addition to the Default Rule.  This allows different device types to have a different policy . If a device type doesn't match a custom rule then the default rule is used.
+You will also see that you can create Custom Rules in addition to the Default Rule. This allows different device types to have a different policy . If a device type doesn't match a custom rule then the default rule is used.
 
 ### Solution Code
 

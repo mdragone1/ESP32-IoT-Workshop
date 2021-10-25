@@ -1,8 +1,8 @@
-# Adding secure communication between the device and IoT Platform using SSL/TLS
+# Securing MQTT Traffic Using Self-Signed Certificate
 
 ## Lab Objectives
 
-In this Lab you will modify MQTT to use a secure connection.  You will learn:
+In this lab you will modify MQTT to use a secure connection.  You will learn:
 
 - How to add SSL/TLS capability to the network connection that MQTT uses
 - How to generate certificates to enable secure connections using OpenSSL
@@ -10,7 +10,12 @@ In this Lab you will modify MQTT to use a secure connection.  You will learn:
 - How to add the certificate to the ESP8266 using part of the flash memory as a file system
 - Basic operations of the ESP8266 file system
 
-** IMPORTANT: Note that you would be able to continue with the other parts, without a secure connection, if you fail to carry out this lab. **
+---
+**IMPORTANT**
+
+Note that you would be able to continue with the other parts, without a secure connection, if you fail to carry out this lab. **
+
+---
 
 ## Introduction
 
@@ -18,7 +23,7 @@ IMPORTANT: These commands are provided as an example only. You should study the 
 
 Having unsecured traffic for an IoT solution is not a good idea, so in this lab you will convert the unsecured MQTT connection into a SSL/TLS connection.
 
-When using SSL/TLS you can verify the certificate(s) presented by the server if you have the certificate of the Root Certificate Authority used to sign the server certificate.  Your Laptop will have common root CA certificates installed as part of the OS or browser so web traffic can be secured and the padlock on your browser can be shown.  However, you need to add any certificate to IoT devices if you want to verify server certificates.
+When using SSL/TLS you can verify the certificate(s) presented by the server if you have the certificate of the Root Certificate Authority used to sign the server certificate. Your laptop will have common root CA certificates installed as part of the OS or browser so web traffic can be secured and the padlock on your browser can be shown. However, you need to add any certificate to IoT devices if you want to verify server certificates.
 
 Some IoT platforms do not allow you to replace the certificates used for MQTT traffic.
 Others (e.g. IBM Cloud) may allow you to generate your own self-signed certificates, and add them to the IoT platform and the ESP8266 code, to enable a SSL/TLS connection with the server certificate verified against the root CA certificate installed on the ESP8266.
@@ -26,35 +31,40 @@ Others (e.g. IBM Cloud) may allow you to generate your own self-signed certifica
 For example, mosquitto provides useful information on this page: https://test.mosquitto.org/ for mosquitto.
 Note also that mosquitto offer testing of secure connection with a deliberately expired server certificate, and will not allow you to generate and upload your own. 
 
-In the case you'd need to create your own certificate, you will be able to use the OpenSSL tool you installed in the prerequisite section, which allows you to work with certificates.  I have provided 2 configuration files and 2 script files in the [certificates](https://github.com/binnes/esp8266Workshop/tree/master/certificates) folder of this git repo. You need to download them and have them in the directory you will use to generate the certificates.  If you have cloned or downloaded the repo, then I suggest you work in the certificates directory.
+In the case you'd need to create your own certificate, you will be able to use the OpenSSL tool you installed in the prerequisite section, which allows you to work with certificates. I have provided 2 configuration files and 2 script files in the [certificates](https://github.com/binnes/esp8266Workshop/tree/master/certificates) folder of this git repo. You need to download them and have them in the directory you will use to generate the certificates. If you have cloned or downloaded the repo, then I suggest you work in the certificates directory.
 
-The commands are provided to create text (pem) and binary (der) formats of the keys and certificates, as some device libraries require one or the other format.  In this workshop we will only use the text versions of the certificates and keys.
+The commands are provided to create text (pem) and binary (der) formats of the keys and certificates, as some device libraries require one or the other format. In this workshop we will only use the text versions of the certificates and keys.
 
 ### Step 1 - Generating the Certificates
 
-To simplify the creation of the certificates use the provided script files.  You need to modify the top section of the file (.bat file if you are working in a Windows command window, .sh file if you are working on MacOS or in a Linux terminal window):
+To simplify the creation of the certificates use the provided script files. You need to modify the top section of the file (.bat file if you are working in a Windows command window, .sh file if you are working on MacOS or in a Linux terminal window):
 
-- **OPENSSL_BIN** - needs to contain the openssl command.  The provided value should work for default installs.
+- **OPENSSL_BIN** - needs to contain the openssl command. The provided value should work for default installs.
 - **COUNTRY_CODE** - is the country code where you are (for information purposes in cert - can leave at GB or you can find a list of valid ISO alpha-2 country codes [here](https://en.wikipedia.org/wiki/ISO_3166-1#Current_codes))
 - **COUNTY_STATE** - is the county, state or district where you are (for information purposes in cert - can leave at DOR, which is for Dorset, and English county)
 - **TOWN** - is the city, town or village where you are (for information purposes in cert - can leave at Bournemouth)
 - **IOT_ORG** - MUST be the 6 character org id that identify your organisation / application, i.e."hwuiot"
 - **DEVICE_TYPE** - is the device type for your device, i.e. "esp8266", as previoulsy suggested
-- DEVICE_ID - us the device id for your device.  
+- **DEVICE_ID** - is the device id for your device. 
 
 Do not make any modifications below the comment in the script file.
 
 Once you have saved your changes you can run the script to generate all the certificates:
 
-- Linux, MacOS:  
-    `chmod +x makeCertificates.sh`  
-    `. ./makeCertificates.sh`
-- Windows:  
-    `makeCertificates.bat`
+**Linux / macOS**
+```
+chmod +x makeCertificates.sh
+. ./makeCertificates.sh
+```
 
-### Step 1a - INFORMATION ONLY
+**Windows**
+```
+makeCertificates.bat
+```
 
-The script starts by generating a root CA key and certificate.  This will then be used to sign a server certificate.
+### Step 1a (FOR INFORMATION ONLY)
+
+The script starts by generating a root CA key and certificate. This will then be used to sign a server certificate.
 
 In a command windows enter the following commands, you need to replace some values, so do not just copy and paste the commands as shown, or your certificates will not work!
 
@@ -70,7 +80,7 @@ openssl x509 -outform der -in rootCA_certificate.pem -out rootCA_certificate.der
 xxd -i rootCA_certificate.der rootCA_certificate.der.h
 ```
 
-replacing:
+Replacing as appropriate:
 
 - C=GB : GB is an ISO alpha-2 country code
 - ST=DOR : DOR is an English county, replace with appropriate state/county/region
@@ -80,17 +90,17 @@ replacing:
 - CN=huwiot Root CA : hwuiot is the Organisation ID for your IoT Platform
 - pass:password123 : password123 is the password that will protect the key - if you change this value do not forget what you entered, as you need it when using the key later.
 
-This generates the key and protects it with a password.  A public certificate is then generated in pem format, which is then converted to der format.  Finally the xxd command creates a header file which allows the certificate to be embedded in code - this can be useful for devices that don't have a file system.
+This generates the key and protects it with a password. A public certificate is then generated in pem format, which is then converted to der format. Finally the xxd command creates a header file which allows the certificate to be embedded in code - this can be useful for devices that don't have a file system.
 
-### Step 2 - Uploading the root CA Certificate to the IoT Platform
+### Step 2 - Uploading the Root CA Certificate to the IoT Platform
 
-You need to load the root CA certificate into the IoT platform using the console.  In the settings section goto to CA Certificates in the Security section.  Select to **Add certificate** then select the rootCA_certificate.pem file you just generated to upload to the platform, then press **Save**.
+You need to load the root CA certificate into the IoT platform using the console. In the settings section goto to CA Certificates in the Security section. Select to **Add Certificate** then select the rootCA_certificate.pem file you just generated to upload to the platform, then press **Save**.
 
-### Step 3 - INFORMATION ONLY - Generating a Server key and certificate
+### Step 3 - Generating a Server key and certificate (FOR INFORMATION ONLY)
 
-After generation the Root Certificate Authority key and certificate, the script generates the key and certificate for the MQTT server.  It does this by generating a key, then creating a certificate request file.  The x509 takes the certificate request and the CA root certificate and key then generates the MQTT server certificate, which is signed by the CA root certificate.
+After generation the Root Certificate Authority key and certificate, the script generates the key and certificate for the MQTT server. It does this by generating a key, then creating a certificate request file. The x509 takes the certificate request and the CA root certificate and key then generates the MQTT server certificate, which is signed by the CA root certificate.
 
-The MQTT server certificate must includes the DNS name of the server.  This is used as part of the verification process at connection time, to ensure that the client is talking to the intended server.  The script generates the **srvext_custom.cfg** file with the correct DNS address of the MQTT broker you use.
+The MQTT server certificate must includes the DNS name of the server. This is used as part of the verification process at connection time, to ensure that the client is talking to the intended server. The script generates the **srvext_custom.cfg** file with the correct DNS address of the MQTT broker you use.
 
 To generate a certificate for the IoT platform the script runs the following commands:
 
@@ -109,43 +119,53 @@ xxd -i mqttServer_crt.der mqttServer_crt.der.h
 
 again substituting values for C=, ST=, L=, O=, OU= and CN=, but this time it is important that the CN value is the URL of your instance of the IoT messaging URL, which is the Organisation ID followed by **.messaging.internetofthings.ibmcloud.com**, which should also match the **subjectAltName** field in the [srvext.cfg](https://github.com/binnes/esp8266Workshop/blob/master/certificates/srvext.cfg) file.
 
-The commands above generate a new key for the server, creates a certificate request for the server, issues the certificate and signs it with the root CA key, saving it as a pem file.  The certificate is converted from pem to der format and lastly the xxd command creates a header file to embed the certificate in code.
+The commands above generate a new key for the server, creates a certificate request for the server, issues the certificate and signs it with the root CA key, saving it as a pem file. The certificate is converted from pem to der format and lastly the xxd command creates a header file to embed the certificate in code.
 
-### Step 4 - Add the server certificate to the IoT Platform / MQTT broker you are using
+### Step 4 - Add the Server Certificate to the IoT Platform / MQTT Broker
 
 You'd need to find and follow the instructions specific to the IoT platform / MQTT broker you are using, to upload and enable your server certificate.
 
 Your should be able to test the server certificate by using openssl:
 
 ``` bash
-openssl s_client -CAfile <CA certificate pem file> -showcerts -state  -servername <server> -connect <address of MQTT broker>:8883
+openssl s_client -CAfile <CA certificate pem file> -showcerts -state -servername <server> -connect <address of MQTT broker>:8883
 ```
 
-replace `<CA certificate pem file>` with the name of the CA root certificate and `<org ID>` with the 6 character org ID for your instance of the IOT Platform.
+Replace `<CA certificate pem file>` with the name of the CA root certificate and `<org ID>` with the 6 character org ID for your instance of the IOT Platform.
 
-### Step 5 - Adding the root CA certificate to the ESP8266
+### Step 5 - Adding the Root CA Certificate to the ESP8266
 
-To allow the ESP8266 to validate the server certificate you need to add the root CA certificate to the ESP8266.  The rootCA_certificate.pem needs to be added to a directory called data in the sketch directory.  You can find out where the sketch directory is by using the *sketch* -> *Show sketch folder* in the Arduino menu.  Inside the sketch directory create a new directory called **data** then copy the rootCA_certificate.pem file into the data directory.  You added the data upload tool to the Arduino IDE as part of the prerequisite setup instructions, so you can now run the tool.  Before running the data upload tool ensure the Serial Monitor window is closed, as it will block communication between the device and upload tool.  From the top menu select *Tools* -> *ESP8266 LittleFS Data Upload*
+To allow the ESP8266 to validate the server certificate you need to add the root CA certificate to the ESP8266. The rootCA_certificate.pem needs to be added to a directory called data in the sketch directory.
 
-### Step 6 - Adding the root CA certificate to your OS or browser
+- You can find out where the sketch directory is by using the *sketch* -> *Show sketch folder* in the Arduino menu.
+- Inside the sketch directory create a new directory called **data** then copy the rootCA_certificate.pem file into the data directory.
+- You added the data upload tool to the Arduino IDE as part of the prerequisite setup instructions, so you can now run the tool.
+- Before running the data upload tool ensure the Serial Monitor window is closed, as it will block communication between the device and upload tool.
+- From the top menu select *Tools* -> *ESP8266 LittleFS Data Upload*
 
-Finally you'd need to add the root CA certificate to your OS or browser, as the IoT Platform / MQTT broker yo use may need a secure connection to get data required to populate and update the console in your browser.  If you don't add the root CA Certificate then the console will not show any data.
+### Step 6 - Adding the Root CA Certificate to Your OS or Browser
 
-If using Firefox you need to import the rootCA_certificate.pem file, by accessing the security section of the preferences.  On some platform there is an Advanced option before you are able to view certificates, then there is an option to import certificates then trust to identify web sites.
+Finally you'd need to add the root CA certificate to your OS or browser, as the IoT Platform / MQTT broker yo use may need a secure connection to get data required to populate and update the console in your browser. If you don't add the root CA Certificate then the console will not show any data.
 
-If using Chrome it depends on the platform.  On some platforms Chrome uses the system certificates, but on others it manages its own certificates and then like Firefox you need to go into the security settings to import the certificate authority certificate and trust it to identify web sites.
+If using Firefox you need to import the rootCA_certificate.pem file, by accessing the security section of the preferences. On some platform there is an Advanced option before you are able to view certificates, then there is an option to import certificates then trust to identify web sites.
+
+If using Chrome it depends on the platform. On some platforms Chrome uses the system certificates, but on others it manages its own certificates and then like Firefox you need to go into the security settings to import the certificate authority certificate and trust it to identify web sites.
 
 To add the root CA certificate to OS:
 
-- **Linux**: Many browsers on Linux do not use the OS certificates but manage their own certificate store, so check before adding the certificate to the OS store.  If you do need to add the rootCA certificate to the OS ca certificate store, then unfortunately there is not a standard way on Linux to achieve this.  Each distro has a slightly different approach, but many want the certificate to be a .crt file, so use the following command to convert the .pem to .crt: `openssl x509 -outform der -in rootCA_certificate.pem -out rootCA_certificate.crt`
-  - Debian: With admin privileges copy the rootCA_certificate.crt file to /usr/share/ca-certificates then run `dpkg-reconfigure ca-certificates`
-  - Fedora: Copy the rootCA_certificate.pem file to **/etc/pki/ca-trust/source/anchors/** (using sudo mv or other root access) then run command `update-ca-trust extract` with admin privileges.
-  - Ubuntu: Copy the rootCA_certificate.crt to **/usr/local/share/ca-certificates** using admin privileges then run `update-ca-certificates`.
-- **MacOS**: Double click the certificate in Finder to open it in the Keychain Access app.  It will automatically show as not trusted.  Double click it to open up the certificate details window and then expand the **Trust** section.  Change the SSL value to **Always Trust**.  Close the certificate window (you will be prompted for your account password to verify the change).
-- **Windows**: Launch the Microsoft Management Console (enter mmc in the start menu), then select *File* ->*Add/Remove Snap-in...*. Highlight Certificates and press **Add**.  Select to manage certificates for **Computer account**, **Local computer** then press **Finish** then **OK**.  Back in the mmc, select the Certificates item in the left column then right-click the **Trusted Root Certificate Authorities** item.  From the popup menu select *All Tasks* -> *Import...* to launch the Certificate Import Wizard.  Select the rootCA_certificate pem or der file (may need to alter filter to show all files) and place it in the **Trusted Root Certificate Authorities** store.
+- **Linux**: Many browsers on Linux do not use the OS certificates but manage their own certificate store, so check before adding the certificate to the OS store. If you do need to add the rootCA certificate to the OS ca certificate store, then unfortunately there is not a standard way on Linux to achieve this. Each distro has a slightly different approach, but many want the certificate to be a .crt file, so use the following command to convert the .pem to .crt: `openssl x509 -outform der -in rootCA_certificate.pem -out rootCA_certificate.crt`
+ - Debian: With admin privileges copy the rootCA_certificate.crt file to /usr/share/ca-certificates then run `dpkg-reconfigure ca-certificates`
+ - Fedora: Copy the rootCA_certificate.pem file to **/etc/pki/ca-trust/source/anchors/** (using sudo mv or other root access) then run command `update-ca-trust extract` with admin privileges.
+ - Ubuntu: Copy the rootCA_certificate.crt to **/usr/local/share/ca-certificates** using admin privileges then run `update-ca-certificates`.
+- **MacOS**: Double click the certificate in Finder to open it in the Keychain Access app. It will automatically show as not trusted. Double click it to open up the certificate details window and then expand the **Trust** section. Change the SSL value to **Always Trust**. Close the certificate window (you will be prompted for your account password to verify the change).
+- **Windows**: Launch the Microsoft Management Console (enter mmc in the start menu), then select *File* ->*Add/Remove Snap-in...*. Highlight Certificates and press **Add**. Select to manage certificates for **Computer account**, **Local computer** then press **Finish** then **OK**. Back in the mmc, select the Certificates item in the left column then right-click the **Trusted Root Certificate Authorities** item. From the popup menu select *All Tasks* -> *Import...* to launch the Certificate Import Wizard. Select the rootCA_certificate pem or der file (may need to alter filter to show all files) and place it in the **Trusted Root Certificate Authorities** store.
 
-!!! note
-    If you are adding a certificate to a browser certificate manager, please ensure you are adding a Certificate Authority certificate.  This should allow you to import a .pem or .der file.  If it is asking for a .p12 file then you are trying to import a certificate and key, so are in the wrong section of the certificate manager.  You want to be adding a **Certificate Authority** certificate or certificate chain
+---
+**IMPORTANT**
+
+If you are adding a certificate to a browser certificate manager, please ensure you are adding a Certificate Authority certificate. This should allow you to import a .pem or .der file. If it is asking for a .p12 file then you are trying to import a certificate and key, so are in the wrong section of the certificate manager. You want to be adding a **Certificate Authority** certificate or certificate chain.
+
+---
 
 ### Step 7 - Updating the ESP8266 code to use the certificate to establish a secure connection
 
