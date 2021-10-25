@@ -1,17 +1,24 @@
 # Welcome to the ESP8266 IoT Workshop
 
-IoT Workshop based on ESP8266, a DHT11/22 and NeoPixel RGB LED
+Welcome to the B31TF IoT Workshop based on ESP8266, a DHT11/22 and NeoPixel RGB LED.
 
-This material is designed to guide you in your B31TF IoT individual assignment
+This material is designed to guide you in your B31TF Sensors, Actuators & IoT **individual assignment**.
 
 Based on IBM workshop (not longer being mantained): [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
 
-For the workshop instructions please visit this site : [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
+## Workplan
 
-## Updating content
+The assignment is split into 5 parts.  A typical workplan is shown below:
 
-The workshop instructions are hosted on GitHub pages and are automatically generated from the Markdown in the docs folder of this repo.
+| Week       |  Part                            |
+|------------|----------------------------------|
+| Week 7     |  [Part 1](part1/README.md)       |            
+| Week 8     |  [Part 1](part1/README.md)       |
+| Week 9     |  [Part 2](part3/README.md)       |
+| Week 10    |  [Part 2](part4/README.md)       |
+|            |  [Part 3](part4/README.md)       |
+| Week 11    |  [Part 3](par55/README.md)       |
+| Week 12    |                                  |
+| Week 13    |  Final report due                |
 
-The site is automatically regenerated when a **push** or **pull request** is made to the **master** branch of this GitHub repository.  
-
-A GitHub Action, which is configured by the .github folder in this repository, runs the commands to update the documentation site.
+To start the workshop navigate to the [introduction](part1/README.md).
