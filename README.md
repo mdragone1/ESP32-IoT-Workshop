@@ -6,23 +6,6 @@ This material is designed to guide you in your B31TF Sensors, Actuators &amp; Io
 
 The material in this workshop is based on the IBM workshop at this link (no longer being mantained): [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
 
-## Workplan 
-
-The assignment is split into 5 parts.  A typical workplan is shown below:
-
-| Week       |  Part                            |
-|------------|----------------------------------|
-| Week 7     |  [Part 1](docs/part1/README.md)       |            
-| Week 8     |  [Part 1](docs/part1/README.md)       |
-| Week 9     |  [Part 2](docs/part3/README.md)       |
-| Week 10    |  [Part 2](docs/part2/README.md)       |
-|            |  [Part 3](docs/part3/README.md)       |
-| Week 11    |  [Part 4](docs/part4/README.md)       |
-| Week 12    |                                  |
-| Week 13    |  Final report due!               |
-
-To start the workshop navigate to the [ Part 1 Introduction](docs/part1/README.md).
-
 ## Important Information
 
 ### Stream Environmental Conditions to The Cloud
@@ -61,33 +44,46 @@ The source for this workshop is hosted on [GitHub](https://github.com/binnes/esp
 
 ## Suggested work plan for the assignment
 
-A suggest work plan can be seen [here](AGENDA.md).
+The assignment is split into 4 parts.  A typical workplan is shown below:
+
+| Week       |  Part                            |
+|------------|----------------------------------|
+| Week 7     |  [Part 1](docs/part1/README.md)  |            
+| Week 8     |  [Part 1](docs/part1/README.md)  |
+| Week 9     |  [Part 2](docs/part3/README.md)  |
+| Week 10    |  [Part 2](docs/part2/README.md)  |
+|            |  [Part 3](docs/part3/README.md)  |
+| Week 11    |  [Part 4](docs/part4/README.md)  |
+| Week 12    |                                  |
+| Week 13    |  Final report due!               |
+
+To start the workshop navigate to the [ Part 1 Introduction](docs/part1/README.md).
 
 ## Course outline
 
-### [Part 1](part1/README.md)
+### [Part 1](docs/part1/README.md)
 
-Make sure you have all the [prerequisite](part1/PREREQ.md) software installed, before you start.
+Make sure you have all the [prerequisite](docs/part1/PREREQ.md) software installed, before you start.
 
 Provides an overview to the assignment, introduces the hardware, the development tooling and then gets you programming the ESP8266 device to connect to the local WiFi network and be able to control the hardware.
 
-### [Part 2](part2/README.md)
+### [Part 2](docs/part2/README.md)
 
 The second part of the assignment requires you to look at how you can connect a device to the Cloud using the MQTT protocol.  
 Optional: You could investigate how to ensure a secure connection between the device and your cloud platform, using SSL/TLS security and certificates.
 
-### [Part 3](part3/README.md)
+### [Part 3](docs/part3/README.md)
 
 In this section we look at using a low-code cloud-based development environment called Node-RED to implement the server side part of the IoT solution.  
 You will need to create a dashboard to visualise the IoT data and also provide controls to configure the ESP8266 device.  
 Your server side application will also control the LED attached to the ESP8266.
 
-### [Part 4](part4/README.md)
+### [Part 4](docs/part4/README.md)
 
 In this section of the workshop looks at how useful information can be extracted from the IoT data using analytics.  
 
-### [Part 5](part5/README.md)
+### [Part 5](docs/part5/README.md)
 
 The last part of the workshop asks you to examine and improve the energy efficiency of your system.
 
-We've provided all the links used throughout the workshop as well as links to other resources [**here**](RESOURCES.md) to help you explore a little more about IoT.
+We've provided all the links used throughout the workshop as well as links to other resources [**here**](docs/RESOURCES.md) to help you explore a little more about IoT.
