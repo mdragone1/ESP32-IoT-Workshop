@@ -70,13 +70,16 @@ Provides an overview to the assignment, introduces the hardware, the development
 
 ### [Part 2](docs/part2/README.md)
 
-The second part of the assignment requires you to look at how you can connect a device to the Cloud using the MQTT protocol.  
+The second part of the assignment requires you to look at how you can connect a device to the Cloud using the MQTT protocol.
+
 Optional: You could investigate how to ensure a secure connection between the device and your cloud platform, using SSL/TLS security and certificates.
 
 ### [Part 3](docs/part3/README.md)
 
 In this section we look at using a low-code cloud-based development environment called Node-RED to implement the server side part of the IoT solution.  
-You will need to create a dashboard to visualise the IoT data and also provide controls to configure the ESP8266 device.  
+
+You will need to create a dashboard to visualise the IoT data and also provide controls to configure the ESP8266 device.
+
 Your server side application will also control the LED attached to the ESP8266.
 
 ### [Part 4](docs/part4/README.md)
