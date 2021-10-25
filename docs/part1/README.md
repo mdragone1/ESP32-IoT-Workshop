@@ -1,41 +1,42 @@
-# Part 1
+# Introduction
 
-Before you can start working on this step you need to have some prerequisite software installed.  
-Details of how to get setup can be found on the [prerequisites page](PREREQ.md)
+Before you can start working on this part you need to have some prerequisite software installed.
 
-## Setup for the workshop
+Details of how to get setup can be found on the [prerequisites page](PREREQ.md).
+
+## Setup for Workshop
 
 This section will take you through installing the prerequisite software on your machine.
 
 - Estimated duration: 15 min
-- practical [**Prerequisite Install and setup**](PREREQ.md)
+- Practical: [**Prerequisite Install and setup**](PREREQ.md)
 
 ## Introduction to the ESP8266
 
-This Lab will show you how to use the Arduino IDE with the ESP8266 plugin to create a new application for the ESP8266 board.
+This lab exercise will show you how to use the Arduino IDE with the ESP8266 plugin to create a new application for the ESP8266 board.
 
 - Estimated duration: 10 min
-- practical [**First App on ESP8266**](FIRSTAPP.md)
+- Practical: [**First App on ESP8266**](FIRSTAPP.md)
 
-## ESP8266 WiFi connectivity
+## ESP8266 WiFi Connectivity
 
-This Lab will show you how to connection your ESP8266 to a local WiFi network. This Lab will also introduce the Serial Monitor, which allows you to see output from a running application.
+This lab exercise will show you how to connection your ESP8266 to a local WiFi network. This Lab will also introduce the Serial Monitor, which allows you to see output from a running application.
 
 - Estimated duration: 15 min
-- practical [**WIFI scanning and connectivity**](WIFI.md)
+- Practical: [**WIFI scanning and connectivity**](WIFI.md)
 
-## LED Light - sample app
+## LED Light - Sample App
 
-In this Lab you will connect the NeoPixel LED and learn how to control it from the ESP8266.
-
-- Estimated duration: 15 minutes
-- practical [**RGB LED**](LED.md)
-
-## DHT Temp - sample app
-
-In this lab you will learn how to connect the DHT temperature and humidity sensor to the ESP8266 board and how to access data from the sensor.
+In this lab exercise you will connect the NeoPixel LED and learn how to control it from the ESP8266.
 
 - Estimated duration: 15 minutes
-- practical [**DHT Sensor**](DHT.md)
+- Practical: [**RGB LED**](LED.md)
+
+## DHT Temp - Sample App
+
+In this lab exercise you will learn how to connect the DHT temperature and humidity sensor to the ESP8266 board and how to access data from the sensor.
+
+- Estimated duration: 15 minutes
+- Practical: [**DHT Sensor**](DHT.md)
 
 
