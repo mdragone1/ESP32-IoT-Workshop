@@ -13,6 +13,7 @@ While real-time charts of sensor data and threshold alerts are useful, the power
 
 ---
 **IMPORTANT**
+
 You will need to secure a suitable NoSQL database. You could get a free account on [MongoDB](https://www.mongodb.com/).
 
 You may need some time to figure out how to: 
