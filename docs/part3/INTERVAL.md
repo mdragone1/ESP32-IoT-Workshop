@@ -1,11 +1,11 @@
-# Control your Device reporting interval via a Node-RED Dashboard Form
+# Change the Sensor Reporting Interval Dynamically
 
 ## Lab Objectives
 
-In this lab you will modify the ESP8266 Arduino program to receive MQTT commands from your Node-RED instance nd build a Node-RED Dashboard Form to dynamically change the reporting interval of the ESP8266 DHT environmental sensor data.  You will learn:
+In this lab you will modify the ESP8266 Arduino program to receive MQTT commands from your Node-RED instance nd build a Node-RED Dashboard Form to dynamically change the reporting interval of the ESP8266 DHT environmental sensor data. You will learn:
 
 - How to build a Node-RED Dashboard Form
-- How to send MQTT commands from the IBM Cloud to your ESP8266
+- How to send MQTT commands from your Node-RED instance to your ESP8266
 - How to receive MQTT commands within your ESP8266 Arduino program / sketch.
 - How to work with JSON data on the ESP8266
 
@@ -13,7 +13,7 @@ In this lab you will modify the ESP8266 Arduino program to receive MQTT commands
 
 Remote management and control of IoT Devices is critical to managing the flow of sensor data to the Cloud. The IoT Device might only need to check in occasionally during quiet periods of inactivity. Waking up the device and requesting that it report sensor data more frequently during active time periods is better for power management, bandwidth consumption and cloud storage.
 
-This section will build a Node-RED Dashboard Form where you can enter a new reporting interval.  A MQTT command will be published from the IBM Cloud to the ESP8266 device. The ESP8266 will receive the interval update and adjust how often it transmits the DHT environmental sensor data.
+This section will build a Node-RED Dashboard Form where you can enter a new reporting interval. A MQTT command will be published from your Node-RED instance to the ESP8266 device. The ESP8266 will receive the interval update and adjust how often it transmits the DHT environmental sensor data.
 
 ### Step 1 - Import the Node-RED Dashboard Reporting Interval Form Flow
 
@@ -29,7 +29,7 @@ Node-RED Dashboard Reporting Interval Form Flow [Get the Code:](https://binnes.g
 
 ### Step 2 - Node-RED Dashboard Form node
 
-- The Node-RED Dashboard **Form** node can be customized to query user input fields - text, numbers, email addresses, passwords, checkboxes and switches.  Sophisticated forms can be constructed in one Node-RED Dashboard Form node.
+- The Node-RED Dashboard **Form** node can be customized to query user input fields - text, numbers, email addresses, passwords, checkboxes and switches. Sophisticated forms can be constructed in one Node-RED Dashboard Form node.
 - After entering the form data, the user can press **Submit** or **Cancel** buttons.
 - When the **Submit** button is pressed the flow constructs a ```msg.payload``` JSON Object with the values entered.
 - Double-click on the Dashboard Form node (1). An **Edit form node** sidebar will open.
@@ -49,28 +49,22 @@ Node-RED Dashboard Reporting Interval Form Flow [Get the Code:](https://binnes.g
 - The resulting JSON Object is passed to an **mqtt out** node.
 - The topic configured in the **mqtt out** node specifies the device to receive the command.
 
-### Step 4 - Send MQTT Commands using the **MQTT Out** Node
+### Step 4 - Send MQTT Commands with the **MQTT Out** Node
 
-- Double-click on the IBM IoT node (4). An **Edit mqtt out node** sidebar will open.
-- The **mqtt out** node is configured to send a **Device Command** (5) to your ESP8266 Device Id by using the appropriate topic.  The target device is identified as part of the topic
+- Find the **mqtt out node** and add it to your flow.
+- The **mqtt out** node is configured to send a **Device Command** (5) to your ESP8266 Device Id by using the appropriate topic. The target device is identified as part of the topic
 - The **Command Type** will be named *interval* and is also set in the topic
 - Press the red Done button.
 
 ![Node-RED Dashboard Form flow node](screenshots/NRD-ReportingIntervalForm-mqttnode.png)
 
-### Step 5 - Reprogram the ESP8266 to subscribe to MQTT Commands
+### Step 5 - Reprogram the ESP8266 to Subscribe to MQTT Commands
 
-- Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the replacement ESP8266 program.
+For this part you should modify the Arduino program for your device to
 
-IoT Workshop Arduino Program : [Get the Code](https://raw.githubusercontent.com/binnes/esp8266Workshop/master/IoTWorkshop.ino/IoTWorkshop.ino.ino)
-
-- Return to the Arduino IDE
-- Record your Watson IoT connection details from the top of your version of the existing IoTWorkshop.ino you created in Part 2.
-- Replace the source code with the above.
-- This version registers a callback and subscribes to MQTT Device Commands.
-- The program loops but polls for MQTT incoming Commands.
+- Register a callback and subscribes to MQTT Device Commands.
+- Loop but poll for MQTT incoming Commands.
 - If a Interval command is sent, it updates how long it should sleep before sending the next DHT environmental sensor data.
-- Merge in your Watson IoT connection details.
 - Compile and Flash this updated program to the ESP8266
 
 ### Step 6 - Node-RED Dashboard Reporting Interval Form
@@ -90,3 +84,7 @@ IoT Workshop Arduino Program : [Get the Code](https://raw.githubusercontent.com/
 - In this screenshot the Reporting Interval was changed from 10 to 5 to 2 and the frequency that the environmental data was sent increased.
 
 ![Arduino Serial Monitor](screenshots/ArduinoSerialMonitor.png)
+
+---
+
+[Click to return to the Part 3 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part3/)

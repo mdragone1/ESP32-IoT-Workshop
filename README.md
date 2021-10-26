@@ -6,9 +6,7 @@ This material is designed to guide you in your B31TF Sensors, Actuators &amp; Io
 
 The material in this workshop is based on the IBM workshop at this link (no longer being mantained): [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
 
-## Important Information
-
-### Stream Environmental Conditions to The Cloud
+## Stream Environmental Conditions to The Cloud
 
 You will learn how to connect an ESP8266 to a Cloud IoT platform over MQTT and stream environmental data from the sensors to a Jupyter notebook.
 
@@ -49,11 +47,11 @@ The assignment is split into 4 parts.  A typical workplan is shown below:
 | Week 8     |  [Part 1](docs/part1/README.md)  |
 |            |  [Part 2](docs/part2/README.md)  |
 | Week 9     |  [Part 2](docs/part2/README.md)  |
-|            |  Part 3 _(available soon)_         |
-| Week 10    |  Part 3 _(available soon)_         |
-|            |  Part 4 _(available soon)_         |
-| Week 11    |  Part 4 _(available soon)_         |
-|            |  Part 5 _(available soon)_         |
+|            |  [Part 3](docs/part3/README.md)  |
+| Week 10    |  [Part 3](docs/part3/README.md)  |
+|            |  Part 4 _(available soon)_       |
+| Week 11    |  Part 4 _(available soon)_       |
+|            |  Part 5 _(available soon)_       |
 | Week 12    |                                  |
 | Week 13    |  Final report due!               |
 
@@ -73,7 +71,7 @@ The second part of the assignment requires you to look at how you can connect a 
 
 Optional: You could investigate how to ensure a secure connection between the device and your cloud platform, using SSL/TLS security and certificates.
 
-### Part 3 _(available soon)_
+### [Part 3](docs/part3/README.md)
 
 In this section we look at using a low-code cloud-based development environment called Node-RED to implement the server side part of the IoT solution.  
 

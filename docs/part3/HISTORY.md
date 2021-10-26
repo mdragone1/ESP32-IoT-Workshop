@@ -1,15 +1,15 @@
-# Node-RED Charts of Historical Sensor Data
+# Read Cloud Storage and Plot History Chart
 
 ## Lab Objectives
 
-In this lab you will read the historical sensor data from a Cloud storage database and create a graph of prior readings.  You will learn:
+In this lab you will read the historical sensor data from a Cloud storage database and create a graph of prior readings. You will learn:
 
 - How to read datasets from a cloud database
 - How to create a chart of historical data
 
 ## Introduction
 
-The previous section stored the Device environment sensor data into a Cloudant DB.  This section will read the historical sensor data from a Cloud storage database and create a graph of prior readings.
+The previous section stored the Device environment sensor data into a Cloudant DB. This section will read the historical sensor data from a Cloud storage database and create a graph of prior readings.
 
 ### Step 1 - Import the Node-RED Historian Chart Flow
 
@@ -21,7 +21,7 @@ Node-RED Historian Chart Flow : [Get the Code](https://binnes.github.io/esp8266W
 - Make sure that the input db node is properly configured to connect to your db instance
 - Click the **Deploy** button on the top of menu bar to deploy the Node-RED flow.
 
-### Step 2 - Graph Historical IoT Sensor data stored in a database using Node-RED
+### Step 2 - Graph Historical IoT Sensor Data Stored in a Database with Node-RED
 
 - The Historical Chart flow reads the IoT Sensor Device data from the Cloudant database and formats it into a Chart array before sending the data to a Node-RED Chart node.
 
@@ -36,3 +36,7 @@ Node-RED Historian Chart Flow : [Get the Code](https://binnes.github.io/esp8266W
 - The Chart Array is passed to the Node-RED Chart node to render the graph.
 
 ![Node-RED Historian Flow](screenshots/NRD-ESP8266-DHT-TempHistorian-Chart.png)
+
+---
+
+[Click to return to the Part 3 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part3/)

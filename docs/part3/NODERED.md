@@ -2,7 +2,7 @@
 
 ## Lab Objectives
 
-In this lab you will set up Node-RED.  
+In this lab you will set up Node-RED. 
 
 You will learn:
 
@@ -12,13 +12,11 @@ You will learn:
 
 ## Introduction
 
-Node-RED is an open-source
-Node.js application that provides a visual programming editor that makes it easy to wire together flows.
-
+Node-RED is an open-source Node.js application that provides a visual programming editor that makes it easy to wire together flows.
 
 ### Step 1 - Create an account for Node-RED from a suitable cloud provider
 
-You can get a free Node-RED instance from [FRED (Free Node-RED)](https://users.sensetecnic.com/app/services)
+You can get a free Node-RED instance from [FRED(Free Node-RED)](https://users.sensetecnic.com/app/services)
 It should take a couple of minutes to create an account (no credit card needed) and start Node-RED
 
 - The Node-RED Visual Programming Editor will open with a default flow
@@ -26,11 +24,12 @@ It should take a couple of minutes to create an account (no credit card needed) 
 - You can wire nodes together to create a program
 - Double Click on the **Flow 1** tab header
 - Rename this tab from **Flow 1** to **Receive ESP8266 Data**
-  ![IoT Starter Flow 1](screenshots/Starter-RenameTab.png)
+ ![IoT Starter Flow 1](screenshots/Starter-RenameTab.png)
 
 ### Step 3 - How to install additional Node-RED nodes (Information only)
 
-- Your instance of Node-RED may includes just a small subset of Node-RED nodes. The Node-RED palette can be extended with over one thousand additional nodes for different devices and functionality. These NPM nodes can be browsed at <http://flows.nodered.org>
+- Your instance of Node-RED may includes just a small subset of Node-RED nodes. The Node-RED palette can be extended with over one thousand additional nodes for different devices and functionality. These NPM nodes can be browsed at <http://flows.nodered.org>.
+
 If you are using FRED, you will need to select "Add or Remove Nodes" from the Tools menu, on the leftmost tab.
 You will be able to search available nodes, by category, and you will be able to install the ones you want, simply by selecting them.
 
@@ -51,3 +50,7 @@ In this step, you will learn how to Import a prebuilt flow from GitHub
 
 - The new flow will be imported into a new tab in the Node-RED Editor.
 - Click the **Deploy** button on the top of menu bar to deploy the Node-RED flow.
+
+---
+
+[Click to return to the Part 3 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part3/)
