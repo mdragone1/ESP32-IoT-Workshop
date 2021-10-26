@@ -45,7 +45,7 @@ You need to configure the MQTT connection details in the MQTT input node, to be 
  ![Node-RED Chart Intro](screenshots/Node-RED-ChartIntro-flow.png)
 - For illustration, the **Fill Single Chart Array** function node above fills an array of static sample data and sends the data to the **Chart** node to visualize.
 
-![Line chart array](screenshots/NRD-Charts-Intro-Flow-LineChartArray.png)
+ ![Line chart array](screenshots/NRD-Charts-Intro-Flow-LineChartArray.png)
 
 - The Node-RED flow is not nearly as interesting as the charts that it renders. To launch the Node-RED Dashboard, in the Node-RED sidebar, turn to the **dashboard** tab and click on the **Launch** button (1) [See two pictures above].
  ![Node-RED Chart Intro](screenshots/Node-RED-ChartIntro-dashboard.png)
@@ -73,7 +73,7 @@ limited capcity, you may want to delete the tabs Chart Intro and Dashboard Intro
  ![NRD ESP8266 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
 - Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **ESP8266 Workshop** tab.
 
-![Temperature and Humidity chart](screenshots/NRD-ESP8266-DHT-TempHum-Chart.png)
+ ![Temperature and Humidity chart](screenshots/NRD-ESP8266-DHT-TempHum-Chart.png)
 
 ### Step 6 - Trigger Alerts when Real-Time Sensor Data Exceeds a Threshold Value
 
