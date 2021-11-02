@@ -14,7 +14,7 @@ You will learn:
 
 Node-RED is an open-source Node.js application that provides a visual programming editor that makes it easy to wire together flows.
 
-### Step 1 - Create an account for Node-RED from a suitable cloud provider
+### Step 1 - Create an Account for Node-RED from a Suitable Cloud Provider
 
 You can get a free Node-RED instance from [FRED(Free Node-RED)](https://users.sensetecnic.com/app/services)
 It should take a couple of minutes to create an account (no credit card needed) and start Node-RED
@@ -26,14 +26,14 @@ It should take a couple of minutes to create an account (no credit card needed) 
 - Rename this tab from **Flow 1** to **Receive ESP8266 Data**
  ![IoT Starter Flow 1](screenshots/Starter-RenameTab.png)
 
-### Step 3 - How to install additional Node-RED nodes (Information only)
+### Step 3 - How to Install Additional Node-RED Nodes (Information Only)
 
 - Your instance of Node-RED may includes just a small subset of Node-RED nodes. The Node-RED palette can be extended with over one thousand additional nodes for different devices and functionality. These NPM nodes can be browsed at <http://flows.nodered.org>.
 
 If you are using FRED, you will need to select "Add or Remove Nodes" from the Tools menu, on the leftmost tab.
 You will be able to search available nodes, by category, and you will be able to install the ones you want, simply by selecting them.
 
-### Step 4 - How to import a prebuilt flow from GitHub
+### Step 4 - How to Import a Prebuilt Flow from GitHub
 
 In this step, you will learn how to Import a prebuilt flow from GitHub
 
