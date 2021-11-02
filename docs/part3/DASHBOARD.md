@@ -13,9 +13,11 @@ In this lab you will import Node-RED flows which create Dashboard Charts. After 
 
 In this section you will learn about Node-RED Dashboard Charts and then create a chart to graph the sensor data arriving from the device.
 
-### Step 1 - Add the Dashboard Notes to the Node-RED Pallet
+### Step 1 - Add the Dashboard Nodes to the Node-RED Pallet
 
 Follow the [steps outlined in the introduction to Node-RED](NODERED.md#step-3-how-to-install-additional-node-red-nodes-information-only) to import the **node-red-dashboard** nodes to your Node-RED pallet
+
+Note that the instructions below are for IBM Node-RED, and the method for installing nodes may vary by platform. Please look for instructions on how to do this on your chosen platform.
 
 - From the Node-RED menu (☰), select *Manage Pallet**
 - Goto the Install tab
