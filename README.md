@@ -51,7 +51,7 @@ The assignment is split into 4 parts.  A typical workplan is shown below:
 | Week 10    |  [Part 3](docs/part3/README.md)  |
 |            |  [Part 4](docs/part4/README.md)  |
 | Week 11    |  [Part 4](docs/part4/README.md)  |
-|            |  Part 5 _(available soon)_       |
+|            |  [Part 4](docs/part4/README.md   |
 | Week 12    |                                  |
 | Week 13    |  Final report due!               |
 
@@ -79,11 +79,11 @@ You will need to create a dashboard to visualise the IoT data and also provide c
 
 Your server side application will also control the LED attached to the ESP8266.
 
-### [Part 4](docs/part4/README.md)  |
+### [Part 4](docs/part4/README.md)
 
 In this section of the workshop looks at how useful information can be extracted from the IoT data using analytics.  
 
-### Part 5 _(available soon)_
+### [Part 4](docs/part4/README.md)
 
 The last part of the workshop asks you to examine and improve the energy efficiency of your system.
 
