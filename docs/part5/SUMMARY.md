@@ -1,14 +1,15 @@
+
 # Workshop Summary
 
-You have now completed the workshop. I hope you enjoyed working through the various sections building up to the final solution.
+You have now completed the workshop.  I hope you enjoyed working through the various sections building up to the final solution.
 
-Hopefully you now have a good understanding of some of the work needed to create an IoT solution. In this workshop you:
+Hopefully you now have a good understanding of some of the work needed to create an IoT solution.  In this workshop you:
 
 - Constructed the hardware circuit using an ESP8266 NodeMCU board with a DHT sensor and RGB LED
-- Create a cloud-based setup to access:
+- Create a cloud-based setup to access 
   - a MQTT broker
   - Node-RED 
-  - Jupyter
+  - Jypiter
 - Implemented the embedded C program for the ESP8266 board:
   - Connected to local WiFi network
   - Handled communication with the connected DHT sensor and LED
@@ -24,11 +25,11 @@ Hopefully you now have a good understanding of some of the work needed to create
 - Validated the classifier model in Jupyter
 - Extracted the model parameters from the Jupyter Notebook and implemented the model on the ESP8266 to provide real-time classification of IoT data
 
-This is just a taster of the many skills needed to implement an IoT solution. Below you will find links to sources of continued learning, where you can explore in more depth some of the topics you touched in this workshop:
+This is just a taster of the many skills needed to implement an IoT solution.   Below you will find links to sources of continued learning, where you can explore in more depth some of the topics you touched in this workshop:
 
-## Coursera Courses Provided by IBM
+## Coursera courses provided by IBM
 
-IBM has created a number of courses on the Coursera learning platform. These courses can be taken for free (the audit course option) or can be purchased. When auditing a course you get access to the learning material, but cannot take the marked assessments and do not earn the course certificate or IBM Open Badge. If you choose to purchase the course then you need to complete all the marked assessments and once passes, you will earn a Coursera course certificate and optionally an IBM Open Badge, showing you have completed the course.  
+IBM has created a number of courses on the Coursera learning platform.  These courses can be taken for free (the audit course option) or can be purchased.  When auditing a course you get access to the learning material, but cannot take the marked assessments and do not earn the course certificate or IBM Open Badge.  If you choose to purchase the course then you need to complete all the marked assessments and once passes, you will earn a Coursera course certificate and optionally an IBM Open Badge, showing you have completed the course.  
   
 There is a Data Science specialisation, which comprises of 3 courses and a capstone project:
 
