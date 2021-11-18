@@ -51,7 +51,7 @@ The assignment is split into 4 parts.  A typical workplan is shown below:
 | Week 10    |  [Part 3](docs/part3/README.md)  |
 |            |  [Part 4](docs/part4/README.md)  |
 | Week 11    |  [Part 4](docs/part4/README.md)  |
-|            |  [Part 4](docs/part4/README.md   |
+|            |  [Part 5](docs/part4/README.md)  |
 | Week 12    |                                  |
 | Week 13    |  Final report due!               |
 
