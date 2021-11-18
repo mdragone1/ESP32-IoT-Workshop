@@ -1,15 +1,11 @@
 # Part 4
 
-!!! note
-    This part of the workshop can be completed without a real device using the Watson IoT Platform device simulator.  Instructions on how to use the simulator are included in this project [here](../Simulator/README.md)
-
-## Introduction to Watson Studio
-
-This section shows you how to deploy the Watson Studio service and how to create your first Jupyter Notebook.
-
-- Estimated duration: 20 min
-- practical [**Watson Studio**](STUDIO.md)
-
+This part of the workshop will require you to train a machine learning model to be used with your device.
+You will use a Jupyter Notebook.
+Previous versions of this workshop made use of a Jupyter Notebook hosted by IBM Cloud.
+However, you are raccomended to use an open-source, free-tier service, for instance by opening an account with https://www.datacamp.com/, as the service allows you to create Jupyter notebooks.
+Alternatively, you could install Jupyter Lab on your own laptop, see https://jupyter.org/install
+ 
 ## Create training data
 
 This section shows you how to create the training data needed to create a model so you will be able to determine what is happening from the sensor data.

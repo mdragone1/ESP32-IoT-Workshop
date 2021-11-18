@@ -72,15 +72,17 @@ The completed ESP8266 application should now look like:
 //        UPDATE CONFIGURATION TO MATCH YOUR ENVIRONMENT
 // --------------------------------------------------------------------------------------------
 
-// Watson IoT connection details
-#define MQTT_HOST "<orgID>.messaging.internetofthings.ibmcloud.com"
-#define MQTT_PORT 8883
-#define MQTT_DEVICEID "d:<orgID>:<type>:<id>"
-#define MQTT_USER "use-token-auth"
-#define MQTT_TOKEN "<token>"
-#define MQTT_TOPIC "iot-2/evt/status/fmt/json"
-#define MQTT_TOPIC_DISPLAY "iot-2/cmd/display/fmt/json"
-#define MQTT_TOPIC_INTERVAL "iot-2/cmd/interval/fmt/json"
+
+// MQTT connection details
+// Replace these parameters with the parameters you used in your part 2
+#define MQTT_HOST "<Replace this with the yaddress of your MQTT broker>"
+#define MQTT_PORT "<Replace this with the port of your MQTT broker>"
+#define MQTT_DEVICEID "<replace this with a unique identifier for your device, e.g. d:hwu:esp8266:< **device id** >"
+#define MQTT_USER "" "<Replace this with your user>"
+#define MQTT_TOKEN "" "<Replace this with your token>"
+#define MQTT_TOPIC "< **device id** >/evt/status/fmt/json"
+#define MQTT_TOPIC_DISPLAY "< **device id** >/cmd/display/fmt/json"
+#define MQTT_TOPIC_INTERVAL "< **device id** >/cmd/interval/fmt/json"
 #define CA_CERT_FILE "/rootCA_certificate.pem"
 #define KEY_FILE "/SecuredDev01_key_nopass.pem"
 #define CERT_FILE "/SecuredDev01_crt.pem"
