@@ -39,21 +39,7 @@ The source for this workshop is hosted on [GitHub](https://github.com/care-group
 
 ## Suggested Workplan
 
-The assignment is split into 4 parts.  A typical workplan is shown below:
-
-| Week       |  Part                            |
-|------------|----------------------------------|
-| Week 7     |  [Part 1](docs/part1/README.md)  |            
-| Week 8     |  [Part 1](docs/part1/README.md)  |
-|            |  [Part 2](docs/part2/README.md)  |
-| Week 9     |  [Part 2](docs/part2/README.md)  |
-|            |  [Part 3](docs/part3/README.md)  |
-| Week 10    |  [Part 3](docs/part3/README.md)  |
-|            |  [Part 4](docs/part4/README.md)  |
-| Week 11    |  [Part 4](docs/part4/README.md)  |
-|            |  [Part 5](docs/part5/README.md)  |
-| Week 12    |                                  |
-| Week 13    |  Final report due!               |
+The assignment is split into 4 parts.  
 
 To start the workshop navigate to the [Part 1 Introduction](docs/part1/README.md).
 
@@ -81,10 +67,6 @@ Your server side application will also control the LED attached to the ESP8266.
 
 ### [Part 4](docs/part4/README.md)
 
-In this section of the workshop looks at how useful information can be extracted from the IoT data using analytics.  
-
-### [Part 5](docs/part5/README.md)
-
-The last part of the workshop asks you to examine and improve the energy efficiency of your system.
+In this last section of the workshop looks at how useful information can be extracted from the IoT data using analytics.  
 
 We've provided all the links used throughout the workshop as well as links to other resources [**here**](docs/RESOURCES.md) to help you explore a little more about IoT.
