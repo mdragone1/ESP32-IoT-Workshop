@@ -25,10 +25,6 @@ credit card details for the registration.
 ---
 **IMPORTANT**
 
-For this workshop you are only allowed to use free-to-use platforms that do not require credit card for registration.
-
----
-
 We have provided [**here**](RESOURCES.md) some suggestions on free-to-use MQTT brokers and Cloud platforms you can use to connect and test the different parts of your applications.
 
 Alternatively, you may find other suitable MQTT brokers or IoT Cloud platforms providing their own MQTT broker as well as additional services, all-in-one, which may be convenient as you would not need to setup multiple accounts and use different dashboards for different services, e.g. see [here](https://www.record-evolution.de/en/6-free-iot-platforms-to-start-your-iot-project-in-2021/) and other links provided on Canvas.
