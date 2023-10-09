@@ -1,6 +1,6 @@
 # Welcome to the ESP8266 IoT Workshop
 
-Welcome to the B31TF IoT Workshop based on ESP8266, a DHT11/22 and NeoPixel RGB LED.
+Welcome to the IoT Workshop based on ESP8266, a DHT11/22 and NeoPixel RGB LED.
 
 This material is designed to guide you in your B31TF Sensors, Actuators &amp; IoT **individual assignment**.
 
