@@ -14,10 +14,11 @@ You will learn:
 
 Node-RED is an open-source Node.js application that provides a visual programming editor that makes it easy to wire together flows.
 
-### Step 1 - Create an Account for Node-RED from a Suitable Cloud Provider
+### Step 1 - Install Node-RED 
 
-You can get a free Node-RED instance from [FRED(Free Node-RED)](https://users.sensetecnic.com/app/services)
-It should take a couple of minutes to create an account (no credit card needed) and start Node-RED
+You can install Node-RED on your laptop or on a cloud-based virtual machine, for instance hosted on your Microsoft Azure Cloud.
+
+When you start Node-RED:
 
 - The Node-RED Visual Programming Editor will open with a default flow
 - On the left side is a palette of nodes that you can drag onto the flow
@@ -30,7 +31,7 @@ It should take a couple of minutes to create an account (no credit card needed) 
 
 - Your instance of Node-RED may includes just a small subset of Node-RED nodes. The Node-RED palette can be extended with over one thousand additional nodes for different devices and functionality. These NPM nodes can be browsed at <http://flows.nodered.org>.
 
-If you are using FRED, you will need to select "Add or Remove Nodes" from the Tools menu, on the leftmost tab.
+Most Node-Red instances will allow you to add or remove nodes from the tools menu, just look at the documentation available for your installation.
 You will be able to search available nodes, by category, and you will be able to install the ones you want, simply by selecting them.
 
 ### Step 4 - How to Import a Prebuilt Flow from GitHub
