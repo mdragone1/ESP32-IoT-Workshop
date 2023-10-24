@@ -9,7 +9,7 @@ In this lab you will read the historical sensor data from a Cloud storage databa
 
 ## Introduction
 
-The previous section stored the Device environment sensor data into a Cloudant DB. This section will read the historical sensor data from a Cloud storage database and create a graph of prior readings.
+The previous section stored the Device environment sensor data into a suitable DB. This section will read the historical sensor data from a Cloud storage database and create a graph of prior readings.
 
 ### Step 1 - Import the Node-RED Historian Chart Flow
 
