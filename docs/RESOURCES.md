@@ -22,16 +22,10 @@ Some additional links:
 Some free (no credit-card) cloud platform you can use for this assignment:
 
 - [Mosquitto MQTT broker](https://mosquitto.org/)
-- [FRED(Free Node-RED)](https://users.sensetecnic.com/app/services)
 - [HIVEMQ public MQTT broker](https://www.hivemq.com/public-mqtt-broker/)
 - [MongoDB](https://www.mongodb.com/)
+- [Microsoft Azure](https://azure.microsoft.com/) Heriot-Watt students can have a free account for up to a month with ~$200 credit
 - [Datacamp (free hosting of Jupyter notebooks)](https://app.datacamp.com)
-
-Information on IBM Cloud
-- [IBM Cloud signup/login](https://ibm.biz/BdZaRT)
-- [IBM Cloud Documentation](https://cloud.ibm.com/docs)
-- [Free Coursera Specialization - Advanced Data Science with IBM](https://www.coursera.org/specializations/advanced-data-science-ibm)
-- [IBM Code IoT content](https://developer.ibm.com/technologies/iot/)
 
 ## Additional material
 
