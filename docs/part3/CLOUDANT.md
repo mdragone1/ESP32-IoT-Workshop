@@ -14,7 +14,9 @@ While real-time charts of sensor data and threshold alerts are useful, the power
 ---
 **IMPORTANT**
 
-You will need to secure a suitable NoSQL database. You could get a free account on [MongoDB](https://www.mongodb.com/).
+You will need to secure a suitable NoSQL database. 
+It is reccomended using MongoDB. 
+You could get a free account on [MongoDB](https://www.mongodb.com/), or install MongoDB locally on your laptop.
 
 You may need some time to figure out how to: 
 - Create a new cluster in mongodb
@@ -39,9 +41,9 @@ Note, the code you have imported makes use of an input node for IBM Cloudant DB.
 
 ### Step 2 - Store IoT Sensor Data with Node-RED
 
-In this step you will use Node-RED to store IoT Sensor data from the ESP8266 DHT environmental sensors in a Cloud database.
+In this step you will use Node-RED to store IoT Sensor data from the ESP8266 DHT environmental sensors in a MongoDB database.
 
-- When the flow is imported there will be a misconfigured node (configured to use IBM Cloudant DB) – indicated by a red triangle. 
+- When the flow is imported there will be a misconfigured node (since it is configured to use another DB, i.e. the IBM Cloudant DB) – indicated by a red triangle. 
  ![Node-RED Cloudant Flow cropped](screenshots/Node-RED-Cloudant-flow-cropped.png)
 - Replace the IBM cloudant input node with the input node for your database (e.g. mongoDB),
 - Associate the input db node with with your database instance, double-click on the historical data node and press the red Done button. The red error triangle will turn blue.
@@ -55,11 +57,11 @@ In the screenshot, the debug sidebar shows a ```msg.payload``` that includes the
 - Click the **Deploy** button on the top of menu bar to deploy the Node-RED flow.
 - The device environmental sensor data is now being recorded in a Cloudant database.
 
-### Step 3 - Observe Sensor Data Added to the Cloud Database
+### Step 3 - Observe Sensor Data Added to the MongoDB Database
 
-If you are usinbg mongoDB, it provides utilities to monitor data incoming to your database.
+MongoDB provides utilities to monitor data incoming to your database.
 
-Spend some time to familiarise with those utilities, and observe the data gathere from your device.
+Spend some time to familiarise with those utilities, and observe the data gathered from your device. 
 
 ---
 
