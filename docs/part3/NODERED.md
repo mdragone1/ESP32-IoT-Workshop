@@ -1,4 +1,4 @@
-# Node-RED Set up and Configuration in IBM Cloud
+# Node-RED Set up and Configuration 
 
 ## Lab Objectives
 
