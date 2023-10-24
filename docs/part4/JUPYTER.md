@@ -1,11 +1,11 @@
-# Run a Jupyter Notebook in Watson Studio
+# Run a Jupyter Notebook
 
 ## Lab Objectives
 
 In this lab you will read IoT data into a Watson Studio Project Jupyter Notebook and perform some analytics.  You will learn:
 
 - How to use Jupyter Notebooks
-- How to read data from a Cloudant DB into Spark
+- How to read data from the DB you used in part 3 into Spark
 - How to manipulate the data within the notebook environment
 - How to create a model to be able to classify the IoT data to determine what is happening.
 
@@ -29,7 +29,7 @@ Within the notebook you are able to manipulate the data. You usually need to exa
 The following assumes that in Step 1 you were successfull in creating a db object and connect it to the database where you have stored the training data
 
 In this step, you need to read the documentation for your database connection, to learn how you can read a subset of the records available -- if the event store holds many thousands of entries, there may be insufficient memory available to load them all
-For instance, for a IBM Cloudant, your Jupyter cell will look like the following:
+For instance, for MongoDB, your Jupyter cell would look like the following:
 
 ```python
 loadlimit = 1000
