@@ -27,6 +27,22 @@ When you start Node-RED:
 - Rename this tab from **Flow 1** to **Receive ESP8266 Data**
  ![IoT Starter Flow 1](screenshots/Starter-RenameTab.png)
 
+### Step 2 - How to secure your Node-RED Editor
+ 
+Further steps may be required to secure the editor post installation. Node-RED's basic Azure installation guide at <https://nodered.org/docs/getting-started/azure>, for example, deploys with a well know administration password and uses http, which transmits content (including passwords) in clear text.  Even for non-production, this is undesirable.  Consider the potential impacts from malicious, automated port scanning services seeking servers with default passwords.
+
+Node-Red provide instructions at <https://nodered.org/docs/user-guide/runtime/securing-node-red> that include:
+- Enabling https
+- Changing the default password
+
+Consider changing the default user id also.
+
+In this instance, browser warnings about trusting the generated certificates for this development environment can safely be ignored (we trust ourselves). The browser is correctly warning that even though the connection is encrypted against eavesdropping and tampering, it has no way of trusting the certificate and thus the server operators. For larger developments or production systems, this can be resolved using a certificate authority.
+
+ ![https warning](screenshots/https_warning.png)
+
+These are basic precautions for non-critical development environments.  For production environments, further impact assessment and security hardening should be considered.
+
 ### Step 3 - How to Install Additional Node-RED Nodes (Information Only)
 
 - Your instance of Node-RED may includes just a small subset of Node-RED nodes. The Node-RED palette can be extended with over one thousand additional nodes for different devices and functionality. These NPM nodes can be browsed at <http://flows.nodered.org>.
