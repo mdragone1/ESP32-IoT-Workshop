@@ -18,14 +18,14 @@ This section shows you how to create the training data needed to create a model 
 This section shows you how to use the training data to create a model that can then be used to classify actions.
 
 - Estimated duration: 20 min
-- practical [**Jupyter Notebook - ESP8266**](JUPYTER.md)
+- practical [**Jupyter Notebook - ESP32**](JUPYTER.md)
 
-## Run the model on the ESP8266 device
+## Run the model on the ESP32 device
 
 This section takes the output from the Jupyter Notebook and implements the trained model on the ESP8266 device.
 
 - Estimated duration: 20 min
-- practical [**Implement model on ESP8266**](MODEL.md)
+- practical [**Implement model on ESP32**](MODEL.md)
 
 ## Workshop summary
 
