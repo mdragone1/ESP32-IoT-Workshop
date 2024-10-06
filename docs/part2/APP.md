@@ -6,7 +6,7 @@ In this lab you will pull together all the information from Part 1 into a single
 
 - How to create a new sketch and some recommendations for app structure
 - How to combine the WiFi, neopixel and DHT libraries into a single application
-- How to work with JSON data on the ESP8266
+- How to work with JSON data on the ESP32
 
 ## Introduction
 
@@ -14,7 +14,7 @@ In Part 1 you looked at a number of example sketches to see how the WiFi, NeoPix
 
 ### Step 1 - Create a New Sketch
 
-Create a new sketch in the Arduino IDE using *File* -> *New* or the icon in the tool bar. The save the sketch *File* -> *Save* and name the sketch, suggested name **esp8266Workshop**.
+Create a new sketch in the Arduino IDE using *File* -> *New* or the icon in the tool bar. The save the sketch *File* -> *Save* and name the sketch, suggested name **esp32Workshop**.
 
 You need to add one more library to the Arduino IDE to provide functions to handle the JSON data format. When we start sending and receiving data from the IoT Platform the JSON data format will be used, so we can start using JSON now. In the Library Manager (*Sketch* -> *Include Library* -> *Manage Libraries...*) search for **ArduinoJson** and install the latest version of the library. 
 
@@ -32,7 +32,7 @@ Sample code for the application is provided below. As you enter it (or cut and p
 Add the code below to the sketch above the **setup()** function:
 
 ```C++
-#include <ESP8266WiFi.h>
+#include <ESP32WiFi.h>
 #include <Adafruit_NeoPixel.h>
 #include <DHT.h>
 #include <ArduinoJson.h>
@@ -177,4 +177,4 @@ See the library [documentation](https://arduinojson.org/v6/doc/) for additional 
 
 ---
 
-[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part2/)
+[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part2/)
