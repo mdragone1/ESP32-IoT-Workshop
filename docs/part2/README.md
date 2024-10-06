@@ -5,7 +5,7 @@
 In this lab exercise you will pull together all the information from part 1 into a single app.
 
 - Estimated duration: 15 min
-- Practical: [**Create ESP8266 Application**](APP.md)
+- Practical: [**Create ESP32 Application**](APP.md)
 
 ## Introduction to the MQTT Protocol
 
