@@ -14,7 +14,7 @@ In just a few nodes, Node-RED can receive the data that was transmitted from the
 
 ## MQTT Application Connections
 
-In Part 2 you connected the ESP8266 application to a MQTT broker. In this section you will use a MQTT client in your Node-RED application.
+In Part 2 you connected the ESP32 application to a MQTT broker. In this section you will use a MQTT client in your Node-RED application.
 
 
 ### Custom Certificates
@@ -65,7 +65,7 @@ The following step 1 helps you to configure a MQTT input node over a secure conn
 - Configure the "to" AZ dropdown to msg. and set it to *payload.d.temp*
 - Click on the red **Done** button
 - Wire the node to the MQTT in node by clicking and dragging the connector on the right of the MQTT in node to the connector on the left of the change node
- ![Receive DHT Data](screenshots/ESP8266-ReceiveDHTdata-Changenode.png)
+ ![Receive DHT Data](screenshots/ESP32-ReceiveDHTdata-Changenode.png)
 
 ## Step 3 - Node-RED Debug Nodes
 
@@ -75,14 +75,14 @@ The following step 1 helps you to configure a MQTT input node over a secure conn
 - Configure the Output to print the *complete msg object* (8).
 - Click on the red **Done** button.
 - Wire the 2 nodes as shown
- ![Receive DHT Data](screenshots/ESP8266-ReceiveDHTdata-Debugnode.png)
+ ![Receive DHT Data](screenshots/ESP32-ReceiveDHTdata-Debugnode.png)
 
 ### Step 4 - Wire the Node-RED nodes together
 
 - Click on the red **Deploy** button in the upper right corner.
   - The **mqtt in** node should show status **Connected**
   - Observe the DHT sensor data in the **debug** tab of the Node-RED right sidebar. You can expand the twisties to expose the JSON object information. Hover over a debug message in the right sidebar and the node that generated the message will be outlined in orange.
-  ![Receive DHT Data](screenshots/ESP8266-ReceiveDHTdata-Deploy.png)
+  ![Receive DHT Data](screenshots/ESP32-ReceiveDHTdata-Deploy.png)
 
 ---
 
