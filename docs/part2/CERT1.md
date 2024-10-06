@@ -7,8 +7,8 @@ In this lab you will modify MQTT to use a secure connection.  You will learn:
 - How to add SSL/TLS capability to the network connection that MQTT uses
 - How to generate certificates to enable secure connections using OpenSSL
 - How to add the certificates to your MQTT broker / IoT platform
-- How to add the certificate to the ESP8266 using part of the flash memory as a file system
-- Basic operations of the ESP8266 file system
+- How to add the certificate to the ESP32 using part of the flash memory as a file system
+- Basic operations of the ESP32 file system
 
 ---
 **IMPORTANT**
@@ -31,7 +31,7 @@ Others (e.g. IBM Cloud) may allow you to generate your own self-signed certifica
 For example, mosquitto provides useful information on this page: https://test.mosquitto.org/ for mosquitto.
 Note also that mosquitto offer testing of secure connection with a deliberately expired server certificate, and will not allow you to generate and upload your own. 
 
-In the case you'd need to create your own certificate, you will be able to use the OpenSSL tool you installed in the prerequisite section, which allows you to work with certificates. I have provided 2 configuration files and 2 script files in the [certificates](https://github.com/care-group/ESP866-IoT-Workshop/tree/main/certificates) folder of this git repo. You need to download them and have them in the directory you will use to generate the certificates. If you have cloned or downloaded the repo, then I suggest you work in the certificates directory.
+In the case you'd need to create your own certificate, you will be able to use the OpenSSL tool you installed in the prerequisite section, which allows you to work with certificates. I have provided 2 configuration files and 2 script files in the [certificates](https://github.com/care-group/ESP32-IoT-Workshop/tree/main/certificates) folder of this git repo. You need to download them and have them in the directory you will use to generate the certificates. If you have cloned or downloaded the repo, then I suggest you work in the certificates directory.
 
 The commands are provided to create text (pem) and binary (der) formats of the keys and certificates, as some device libraries require one or the other format. In this workshop we will only use the text versions of the certificates and keys.
 
@@ -44,7 +44,7 @@ To simplify the creation of the certificates use the provided script files. You 
 - **COUNTY_STATE** - is the county, state or district where you are (for information purposes in cert - can leave at DOR, which is for Dorset, and English county)
 - **TOWN** - is the city, town or village where you are (for information purposes in cert - can leave at Bournemouth)
 - **IOT_ORG** - MUST be the 6 character org id that identify your organisation / application, i.e."hwuiot"
-- **DEVICE_TYPE** - is the device type for your device, i.e. "esp8266", as previoulsy suggested
+- **DEVICE_TYPE** - is the device type for your device, i.e. "esp32", as previoulsy suggested
 - **DEVICE_ID** - is the device id for your device. 
 
 Do not make any modifications below the comment in the script file.
@@ -117,7 +117,7 @@ xxd -i mqttServer_crt.der mqttServer_crt.der.h
 ```
 
 
-again substituting values for C=, ST=, L=, O=, OU= and CN=, but this time it is important that the CN value is the URL of your instance of the IoT messaging URL, which is the Organisation ID followed by **.messaging.internetofthings.ibmcloud.com**, which should also match the **subjectAltName** field in the [srvext.cfg](https://github.com/care-group/ESP866-IoT-Workshop/tree/main/certificates/srvext.cfg) file.
+again substituting values for C=, ST=, L=, O=, OU= and CN=, but this time it is important that the CN value is the URL of your instance of the IoT messaging URL, which is the Organisation ID followed by **.messaging.internetofthings.ibmcloud.com**, which should also match the **subjectAltName** field in the [srvext.cfg](https://github.com/care-group/ESP32-IoT-Workshop/tree/main/certificates/srvext.cfg) file.
 
 The commands above generate a new key for the server, creates a certificate request for the server, issues the certificate and signs it with the root CA key, saving it as a pem file. The certificate is converted from pem to der format and lastly the xxd command creates a header file to embed the certificate in code.
 
@@ -133,15 +133,15 @@ openssl s_client -CAfile <CA certificate pem file> -showcerts -state -servername
 
 Replace `<CA certificate pem file>` with the name of the CA root certificate and `<org ID>` with the 6 character org ID for your instance of the IOT Platform.
 
-### Step 5 - Adding the Root CA Certificate to the ESP8266
+### Step 5 - Adding the Root CA Certificate to the ESP32
 
-To allow the ESP8266 to validate the server certificate you need to add the root CA certificate to the ESP8266. The rootCA_certificate.pem needs to be added to a directory called data in the sketch directory.
+To allow the ESP32 to validate the server certificate you need to add the root CA certificate to the ESP32. The rootCA_certificate.pem needs to be added to a directory called data in the sketch directory.
 
 - You can find out where the sketch directory is by using the *sketch* -> *Show sketch folder* in the Arduino menu.
 - Inside the sketch directory create a new directory called **data** then copy the rootCA_certificate.pem file into the data directory.
 - You added the data upload tool to the Arduino IDE as part of the prerequisite setup instructions, so you can now run the tool.
 - Before running the data upload tool ensure the Serial Monitor window is closed, as it will block communication between the device and upload tool.
-- From the top menu select *Tools* -> *ESP8266 LittleFS Data Upload*
+- From the top menu select *Tools* -> *ESP32 LittleFS Data Upload*
 
 ### Step 6 - Adding the Root CA Certificate to Your OS or Browser
 
@@ -167,18 +167,18 @@ If you are adding a certificate to a browser certificate manager, please ensure 
 
 ---
 
-### Step 7 - Updating the ESP8266 code to use the certificate to establish a secure connection
+### Step 7 - Updating the ESP32 code to use the certificate to establish a secure connection
 
 When a server connects using SSL/TLS it presents its own certificate for verification.  The client uses its local CA certificate store to validate the certificate presented by the server is authentic, by validating that a known CA signed the certificate.
 
-Part of the certificate verification process checks that the certificate is in data (not before the start time of the certificate and not after certificate expiry time), so the ESP8266 needs to know the correct date/time.  The Network Time Protocol can be used to get the correct time from Internet servers.
+Part of the certificate verification process checks that the certificate is in data (not before the start time of the certificate and not after certificate expiry time), so the ESP32 needs to know the correct date/time.  The Network Time Protocol can be used to get the correct time from Internet servers.
 
-You have already uploaded the CA certificate to the ESP8266, so now the code needs to be updated to load the certificate from the flash file system and switch to using a SSL/TLS connection.
+You have already uploaded the CA certificate to the ESP32, so now the code needs to be updated to load the certificate from the flash file system and switch to using a SSL/TLS connection.
 
 Make the following code changes:
 
 - Add an include at the top of the file to access the file system : `#include <LittleFS.h>`
-- Add an include after the **ESP8266WiFi.h** include to add time : `#include <time.h>`
+- Add an include after the **WiFi.h** include to add time : `#include <time.h>`
 - Change the MQTT_PORT to use the secure port 8883 : `#define MQTT_PORT 8883`
 - Add a new #define to name the CA certificate : `#define CA_CERT_FILE "/rootCA_certificate.pem"`
 - Change the wifiClient to use the secure version : `BearSSL::WiFiClientSecure wifiClient;`
@@ -249,7 +249,7 @@ You should be able to verify this, by using a dashboard/ console in the MQTT bro
 
 ### Step 8 - How the LittleFS file system works
 
-The ESP8266 allows some of the on board or connected flash memory to be used as a file system.  The Arduino IDE plugin allows you to customise the size of the filesystem (*Tools* -> *Flash Size* allows you to specify 1MB or 3MB for the file system when a NodeMCU board is the target device).  The LittleFS filesystem is a very simple file system.  Filenames should not be more than 31 characters.
+The ESP32 allows some of the on board or connected flash memory to be used as a file system.  The Arduino IDE plugin allows you to customise the size of the filesystem (*Tools* -> *Flash Size* allows you to specify 1MB or 3MB for the file system when a NodeMCU board is the target device).  The LittleFS filesystem is a very simple file system.  Filenames should not be more than 31 characters.
 
 The data upload tool allows the content data directory in the sketch folder to be converted to a LittleFS filesystem and uploaded to the device, where the content can then be access from the application.
 
@@ -267,7 +267,7 @@ The finished application should look like this:
 
 ```C++
 #include <LittleFS.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <time.h>
 #include <Adafruit_NeoPixel.h>
 #include <DHT.h>
@@ -477,4 +477,4 @@ void loop() {
 
 ---
 
-[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part2/)
+[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part2/)
