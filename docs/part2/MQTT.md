@@ -13,7 +13,7 @@ In the previous lab you built the stand alone sensor application. Now we want to
 
 Once the data reaches a suitable MQTT broker, it can then be more easily routed to other services hosted in the Cloud (such as Node-RED, for visualisation and control, and Jupiter, for data analysis).
 
-The software you are building will not generate much data and there are a number of public MQTT brokers you could connect your ESP8266 to, such as the public MQTT brokers hosted by mosquitto and hiveMQ. 
+The software you are building will not generate much data and there are a number of public MQTT brokers you could connect your ESP32 to, such as the public MQTT brokers hosted by mosquitto and hiveMQ. 
 
 We will start by using an unsecured MQTT connection, then in the next section we will look at how you we can secure the connection. 
 
@@ -128,9 +128,9 @@ Finally, replace the 10 second ```delay(10000)``` to call the mqtt **loop()** fu
 
 ### Step 3 - Run the Application
 
-Compile and upload the code to your ESP8266 and you should see the ```WiFi Connected```, followed by ```Attempting MQTT connection...MQTT Connected```. Every 10 second interval you see the DHT sensor data printed on the console. 
+Compile and upload the code to your ESP32 and you should see the ```WiFi Connected```, followed by ```Attempting MQTT connection...MQTT Connected```. Every 10 second interval you see the DHT sensor data printed on the console. 
 
-The ESP8266 should also be publishing MQTT messages to the MQTT Broker.
+The ESP32 should also be publishing MQTT messages to the MQTT Broker.
 
 To verify this, you should use another MQTT client. This could be a mosquitto client installed on your laptop, but also a web-based client, conveniently offered by both hiveMQ and mosquitto.
 
@@ -159,10 +159,10 @@ The documentation of the broker you have chosen (e.g. hiveMQ or mosquitto) will 
 
 ### Solution code
 
-The complete ESP8266 application is shown below (you will need to change the configuration section to match your environment):
+The complete ESP32 application is shown below (you will need to change the configuration section to match your environment):
 
 ```C++
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <Adafruit_NeoPixel.h>
 #include <DHT.h>
 #include <ArduinoJson.h>
@@ -318,4 +318,4 @@ void loop() {
 
 ---
 
-[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part2/)
+[Click to return to the Part 2 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part2/)
