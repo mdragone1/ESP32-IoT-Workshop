@@ -1,4 +1,4 @@
-# Welcome to the ESP832 IoT Workshop
+# Welcome to the ESP32 IoT Workshop
 
 Welcome to the IoT Workshop based on ESP32, a DHT11/22 and NeoPixel RGB LED.
 
