@@ -1,6 +1,6 @@
-# Welcome to the ESP8266 IoT Workshop
+# Welcome to the ESP832 IoT Workshop
 
-Welcome to the IoT Workshop based on ESP8266, a DHT11/22 and NeoPixel RGB LED.
+Welcome to the IoT Workshop based on ESP32, a DHT11/22 and NeoPixel RGB LED.
 
 This material is designed to guide you in your B31TF Sensors, Actuators &amp; IoT **individual assignment**.
 
@@ -8,14 +8,14 @@ The material in this workshop is based on the IBM workshop at this link (no long
 
 ## Stream Environmental Conditions to The Cloud
 
-You will learn how to connect an ESP8266 to a Cloud IoT platform over MQTT and stream environmental data from the sensors to a Jupyter notebook.
+You will learn how to connect an ESP32 to a Cloud IoT platform over MQTT and stream environmental data from the sensors to a Jupyter notebook.
 
 This document is designed to guide your learning esperience and help you to develop your system, gradually.
 Make sure you understand each step and that each step works correctly, before moving to the next step.
 
 The document provides information on what you should achieve at the end of each part, and lab sessions to let you familiarise with some of the hardware and software tools you will be using.
 It also provides hints and links to useful resources and to some of the code you need to use, but does not give you a fully working solution. 
-You will need time to research practical ways to achieve your objectives, and learn about ESP8266 programming, MQTT and IoT Platforms.
+You will need time to research practical ways to achieve your objectives, and learn about ESP32 programming, MQTT and IoT Platforms.
 
 In addition to a MQTT broker, your application will use a number of services, such as Node-RED, to visualise sensor data and to control your device, and Jupyter, to carry out some simple data analytics.
 
@@ -31,7 +31,7 @@ Alternatively, you may find other suitable MQTT brokers or IoT Cloud platforms p
 
 ## Access to Workshop Materials
 
-The source for this workshop is hosted on [GitHub](https://github.com/care-group/ESP866-IoT-Workshop) and this site is automatically generated from the Markdown in the GitHub repository.
+The source for this workshop is hosted on [GitHub](https://github.com/care-group/ESP32-IoT-Workshop) and this site is automatically generated from the Markdown in the GitHub repository.
 
 ## Suggested Workplan
 
@@ -57,9 +57,9 @@ Optional: You could investigate how to ensure a secure connection between the de
 
 In this section we look at using a low-code cloud-based development environment called Node-RED to implement the server side part of the IoT solution.  
 
-You will need to create a dashboard to visualise the IoT data and also provide controls to configure the ESP8266 device.
+You will need to create a dashboard to visualise the IoT data and also provide controls to configure the ESP32 device.
 
-Your server side application will also control the LED attached to the ESP8266.
+Your server side application will also control the LED attached to the ESP32.
 
 ### [Part 4](docs/part4/README.md)
 
