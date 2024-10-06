@@ -29,7 +29,7 @@ Note that the instructions below are for IBM Node-RED, and the method for instal
 
 Open the “Get the Code” github URL listed below, mark or Ctrl-A to select all of the text, and copy the text for the flow to your Clipboard. Recall from a previous section, click on the Node-RED Menu, then Import, then Clipboard. Paste the text of the flow into the Import nodes dialog and press the red Import button. Finally, click on the red **Deploy** button in the upper right corner.
 
-Node-RED Dashboard Charts : [Get the Code](https://binnes.github.io/esp8266Workshop/part3/flows/NRD-Charts-DHTSensorData.json){target=_blank}
+Node-RED Dashboard Charts : [Get the Code](https://binnes.github.io/esp32Workshop/part3/flows/NRD-Charts-DHTSensorData.json){target=_blank}
 
 
 ### Step 3 - Learn about Various Node-RED Dashboard Chart types
@@ -72,8 +72,8 @@ limited capcity, you may want to delete the tabs Chart Intro and Dashboard Intro
 - The **mqtt in** node may need to be configured to pull in the config you created in the previous section.is already configured to receive *status* Device Events from the ESP8266 Device Type.
 - The **Change** nodes extract the ```msg.payload.d.temp``` and ```msg.payload.d.humidity``` values from the JSON object sent over MQTT from the device environmental sensor to the MQTT broker.
 - The environmental sensor values are sent to two charts to plot Temperature and Humidity.
- ![NRD ESP8266 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
-- Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **ESP8266 Workshop** tab.
+ ![NRD ESP32 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
+- Turn to the Node-RED Dashboard browser tab that you launched in Step 2, click on the tab in the upper left corner, and select the **ESP32 Workshop** tab.
 
  ![Temperature and Humidity chart](screenshots/NRD-ESP8266-DHT-TempHum-Chart.png)
 
@@ -87,11 +87,11 @@ Often IoT devices and sensors are deployed so that alerts can be triggered when 
 - The Alert message is sent to a **Node-RED Dashboard Notification** node to display in the browser.
 - This flow could be extended to call a **Twilio** node to send a SMS message. It could raise an alarm in another system by triggering a REST API call to the manufacturing production operations systems.
 
- ![NRD ESP8266 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow2.png)
+ ![NRD ESP32 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow2.png)
 
-- Return to the Node-RED Dashboard **ESP8266 Workshop** tab and increase the temperature of your DHT sensor above 30C.
+- Return to the Node-RED Dashboard **ESP32 Workshop** tab and increase the temperature of your DHT sensor above 30C.
 
-![Temperature and Humidity chart](screenshots/NRD-ESP8266-DHT-TempHum-ChartAlert.png)
+![Temperature and Humidity chart](screenshots/NRD-ESP32-DHT-TempHum-ChartAlert.png)
 
 ---
 
