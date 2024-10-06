@@ -2,7 +2,7 @@
 
 Welcome to the IoT Workshop based on ESP32, a DHT11/22 and NeoPixel RGB LED.
 
-This material is designed to guide you in your B31TF Sensors, Actuators &amp; IoT **individual assignment**.
+This material is designed to guide you in your B31OT (IoT) **individual assignment**.
 
 The material in this workshop is based on the IBM workshop at this link (no longer being mantained): [https://binnes.github.io/esp8266Workshop/](https://binnes.github.io/esp8266Workshop/)
 
