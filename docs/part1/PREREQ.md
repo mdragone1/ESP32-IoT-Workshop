@@ -42,34 +42,16 @@ You may need admin access to your workstation to be able to install the software
 
 ### Step 1 - Install Drivers
 
-If you are using the kit given to you in the B31OT laboratory, then the boards you will be using are branded XXXX and use the CH340 USB to serial chip.
+If you are using the kit given to you in the B31OT laboratory, then the boards you will be using will need either the CP210x or the CH340 USB to serial chip. 
 
-You may need a driver for your OS to be able to communicate with the USB to serial CH340G chip used in the ESP32 modules. Do not plugin the device until you have installed the driver on Windows and Mac. The drivers can be downloaded from :
+You should check the datasheet of your board to make sure you identify the right USB to UART communication chip that’s being used in your board.
 
+You may need a driver for your OS to be able to communicate with the USB to serial CH340G chip used in the ESP32 modules. Do not plugin the device until you have installed the driver on Windows and Mac.
 
 **macOS**
 
-Link: [http://www.wch.cn/download/CH341SER_MAC_ZIP.html](http://www.wch.cn/download/CH341SER_MAC_ZIP.html)
+See also : https://randomnerdtutorials.com/install-esp32-esp8266-usb-drivers-cp210x-mac-os/
 
-This is the manufacturers web site, in Chinese, for the USB driver chip on the LoLin NodeNCU board. Use Google Chrome to translate, or just click the download link to access the macOS driver.
-
-After installing go to 'System Preferences -> Security and Privacy' to allow the driver to be loaded.
-
-Alternatively if you use [homebrew](https://brew.sh) you can install the driver using command:
-
-```
-bash
-brew cask install homebrew/cask-drivers/wch-ch34x-usb-serial-driver
-```
-
-If you have your own ESP32 module then it may not use the CH340G USB to serial chip. Another very popular chip is the CP2102, which is used in Amica branded boards. The drivers for this chip can be found [**here**](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
-
-If you are a Mac user and use [homebrew](https://brew.sh) then the driver can be installed using command:
-
-```
-bash
-brew cask install homebrew/cask-drivers/silicon-labs-vcp-driver
-```
 
 **Windows / Linux**
 
@@ -82,9 +64,6 @@ Select the appropriate one for your OS, download it, unzip it and install it.
 
 Linux should not need a driver installing, as it should already be installed.
 
----
-
-If you have your own ESP32 module then it may not use the CH340G USB to serial chip. Another very popular chip is the CP2102, which is used in Amica branded boards. The drivers for this chip can be found [**here**](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 
 **All**
 
@@ -135,9 +114,9 @@ Open Boards Manager from Tools > Board menu and install esp32 platform (and do n
 
 Once installed close the Board Manager. You may need to restart Arduino IDE before continuing.
 
-### Step 4 - Install the Filesystem Upload Tool for ESP8266
+### Step 4 - Install the Filesystem Upload Tool for ESP32
 
-The ESP32 has flash memory that can hold a filesystem. There is a plugin for Arduino that allows you to generate a populated filesystem and upload it to the ESP32 board. The plugin can be downloaded from [**here**](https://github.com/espressif/arduino-esp32/tree/master/libraries/LittleFS). You need to create a tools directory within the sketch directory then extract the content there.
+The ESP32 has flash memory that can hold a filesystem. There is a plugin for Arduino that allows you to generate a populated filesystem and upload it to the ESP32 board. See here https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/#installing where you can download and install the plugin. You need to create a tools directory within the sketch directory then extract the content there.
 
 
 **IMPORTANT**
@@ -182,4 +161,4 @@ The first method will not provide the xxd binary, but you don't need it for this
 
 ---
 
-[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part1/)
