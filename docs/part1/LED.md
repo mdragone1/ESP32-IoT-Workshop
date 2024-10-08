@@ -1,4 +1,4 @@
-# Controlling the RGB LED from the ESP8266
+# Controlling the RGB LED from the ESP32
 
 ## Lab Objectives
 
