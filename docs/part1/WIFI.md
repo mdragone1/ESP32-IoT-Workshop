@@ -49,4 +49,4 @@ If you finish early, jump back to Step 3 to add the additional functionality
 
 ---
 
-[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part1/)
