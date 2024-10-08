@@ -1,4 +1,4 @@
-# Your first ESP8266 application
+# Your first ESP32 application
 
 ## Lab Objectives
 
@@ -9,44 +9,31 @@ This lab will show you how to use the Arduino IDE with the ESP8266 plugin to cre
 - How to upload a binary onto the board
 - You should also take time to understand the flow of an Arduino application, and the purpose of the **setup()** and **loop()** functions.
 
-### Step 1 - Setting up the Arduino Environment for the ESP8266
+### Step 1 - Setting up the Arduino Environment for the ESP32
 
-Let's start with a simple application to display information about the flash memory. Start by setting up your Arduino IDE to the correct settings for the board. Using the *Tools* menu, ensure the following settings are set:
-
-- Board : **NodeMCU 1.0 (ESP-12E Module)**
-- Upload Speed : **115200**
-- CPU Frequency : **160 MHz**
-- Flash Size : **4M (FS:1M OTA~1019KB)**
-- Debug Port : **Disabled**
-- Debug Level : **None**
-- IwIP Variant : **v2 Lower Memory**
-- vTables: **Flash**
-- Exceptions: **Disabled**
-- Erase Flash : **Only Sketch**
-- SSL Support : **Basic SSL ciphers (lower ROM use)**
-- Port : *Connect the ESP8266 to your laptop using a MicroUSB cable and then select your port, depending on OS*
+Make sure you setup your Arduino IDE to the correct port where you have connected your device and with the correct settings for the specific board you have been given. Using the *Tools* menu.
 
 ### Step 2 - Loading an Example Sketch
 
-Then choose *File* -> *Examples* -> *ESP8266* -> *CheckFlashConfig* from the menu to open a new window with the sample sketch preloaded (you can close the previous window as it is not needed).
+Then choose *File* -> *Examples* -> *ESP832* -> ... from the menu to open a new window with the sample sketches preloaded (you can close the previous window as it is not needed).
 
 ### Step 3 - Compiling the Sketch
 
 ![Verify command](../images/verify.png)
 
-You can now compile the sketch for the ESP8266 by selecting the **Verify** button on the command bar (tick icon) or using the *sketch* -> *Verify/Compile* menu option. You will see there are keyboard short cuts for various commands, shown next to the menu option which you may want to learn and use.
+You can now compile the sketch you want to test for the ESP32 by selecting the **Verify** button on the command bar (tick icon) or using the *sketch* -> *Verify/Compile* menu option. You will see there are keyboard short cuts for various commands, shown next to the menu option which you may want to learn and use.
 
 ### Step 4 - Uploading the Sketch
 
 ![Upload command](../images/upload.png)
 
-Once the compile has finished you can upload the new application to your ESP8266 using the **upload** button on the command bar (arrow to right icon) or using the *Sketch* -> *Upload* menu option.
+Once the compile has finished you can upload the new application to your ESP326 using the **upload** button on the command bar (arrow to right icon) or using the *Sketch* -> *Upload* menu option.
 
-Yyou don't need to compile then upload. Just using upload will compile the application if necessary then upload it to the ESP8266.
+Yyou don't need to compile then upload. Just using upload will compile the application if necessary then upload it to the device.
 
 If you try to save the sketch you will be prompted to enter a name/location for the sketch. This is because the example sketches are read-only, if you want to modify them and save the modification you need to save it to a new location.
 
-This example sketch prints out information about the flash memory on board the ESP8266. To see the output you need to open up the Serial Monitor.
+This example sketch prints out information about the flash memory on board the ESP32. To see the output you need to open up the Serial Monitor.
 
 ![Serial Monitor](../images/SerialMonitor.png)
 
@@ -62,4 +49,4 @@ This example sketch initialises the Serial connection in the **setup()** functio
 
 ---
 
-[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP866-IoT-Workshop/docs/part1/)
+[Click to return to the Part 1 homepage.](https://care-group.github.io/ESP32-IoT-Workshop/docs/part1/)
