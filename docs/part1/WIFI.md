@@ -12,7 +12,7 @@ This lab will show you how to connection your ESP32 to a local WiFi network. Thi
 
 In the First App practical you verified you had a working development environment and uploaded your first application to the ESP32. Now we will start exploring some of the more advanced functionality of the ESP8266, starting with the on board WiFi interface.
 
-The ESP8266 has a built in WiFi interface that supports 802.11 b/g/n 2.4 GHz networking. 5GHz frequencies are only supported by the latest models (e.g. C5). The ESP32 can be setup to be an access point or to join an existing Wireless LAN. We are going to join a LAN in the laboratory.
+The ESP32 has a built in WiFi interface that supports 802.11 b/g/n 2.4 GHz networking. 5GHz frequencies are only supported by the latest models (e.g. C5). The ESP32 can be setup to be an access point or to join an existing Wireless LAN. We are going to join a LAN in the laboratory.
 
 ### Step 1 - Load an Example Sketch
 
