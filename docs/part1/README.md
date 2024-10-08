@@ -13,12 +13,12 @@ This section will take you through installing the prerequisite software on your 
 
 ## Introduction to the ESP32
 
-This lab exercise will show you how to use the Arduino IDE with the ESP8266 plugin to create a new application for the ESP8266 board.
+This lab exercise will show you how to use the Arduino IDE with the ESP32 plugin to create a new application for the ESP8266 board.
 
 - Estimated duration: 10 min
 - Practical: [**First App on ESP32**](FIRSTAPP.md)
 
-## ESP8266 WiFi Connectivity
+## ESP32 WiFi Connectivity
 
 This lab exercise will show you how to connection your ESP32 to a local WiFi network. This Lab will also introduce the Serial Monitor, which allows you to see output from a running application.
 
