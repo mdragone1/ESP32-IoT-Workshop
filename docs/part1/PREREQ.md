@@ -114,7 +114,10 @@ Open Boards Manager from Tools > Board menu and install esp32 platform (and do n
 
 Once installed close the Board Manager. You may need to restart Arduino IDE before continuing.
 
-### Step 4 - Install the Filesystem Upload Tool for ESP32
+### Step 4 - Install the Filesystem Upload Tool for ESP32 
+IMPORTANT: You can skip this step as you do not need to implement a secure MQTT connection.
+This step will be shown as a tutorial in class.
+The instructions below do not work with new (>=2.0) Arduino IDE
 
 The ESP32 has flash memory that can hold a filesystem. There is a plugin for Arduino that allows you to generate a populated filesystem and upload it to the ESP32 board. See here https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/#installing where you can download and install the plugin. You need to create a tools directory within the sketch directory then extract the content there.
 
@@ -132,6 +135,9 @@ The default location of the sketch directory is:
 - Windows - **C:\Users\< user name >\Documents\Arduino\tools\ESP32LittleFS**
 
 #### Step 5 - SSL utility to work with certificates
+IMPORTANT: You can skip this step as you do not need to implement a secure MQTT connection.
+This step will be shown as a tutorial in class.
+The instructions below do not work with new (>=2.0) Arduino IDE
 
 During the workshop you will be generating your own self-signed certificates, so need the OpenSSL tooling installed. Follow the instructions for your OS below:
 
