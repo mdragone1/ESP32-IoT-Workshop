@@ -6,7 +6,7 @@ In this lab you will connect the NeoPixel LED and learn how to control it from t
 - The electrical connections of the LED and how to connect to the ESP32
 - How to control the LED - by the end of the lab you should have written a program that can set the LED to specific colors.
 
-NOTE: The LED we are using this year (2024/25) is not a NeoPixel but a RGB LED Common Anode from Switch Electronics
+NOTE: The LED we are using this year (2024/25) is not a NeoPixel but a RGB 5mm LED Common Anode from Switch Electronics
 See link: https://www.switchelectronics.co.uk/products/rgb-5mm-led-common-anode?currency=GBP&variant=45356647678261&stkn=bbf1d20e1ed7&gad_source=1&gbraid=0AAAAAqEgT0D7UvQVtPwsikIBhB7H4bFe1&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0cslP3T6Gr8zZ9_26iMx1aVwpPH4Cr72SDgCGR1ZSa1of0CRGnvDoInkaAjYbEALw_wcB
 
 
