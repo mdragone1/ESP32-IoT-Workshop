@@ -30,6 +30,7 @@ When you start Node-RED:
 ### Step 2 - How to secure your Node-RED Editor
 
 Note: You do not need this if you did not implement secure (SSL based) MQTT communication in Step 2.
+
 Further steps may be required to secure the editor post installation. Node-RED's basic Azure installation guide at <https://nodered.org/docs/getting-started/azure>, for example, deploys with a well know administration password and uses http, which transmits content (including passwords) in clear text.  Even for non-production, this is undesirable.  Consider the potential impacts from malicious, automated port scanning services seeking servers with default passwords.
 
 Node-Red provide instructions at <https://nodered.org/docs/user-guide/runtime/securing-node-red> that include:
