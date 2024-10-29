@@ -35,9 +35,8 @@ If you finish this assignment early modify the sketch to show the channel number
 The example sketch **WiFiClient** shows how to connect to a WiFi network, providing a SSID and password, which we will use in part 2 of the workshop. Load the sketch (*File* -> *Examples* -> *WiFi* -> *WiFiClient*) and examine the code, take note of how the WiFi network credentials are entered to join a network.
 
 You can use this step to connect to a hotspot you create with your phone. 
-Registered devices will be able to connect to the HWResearchNetwork WiFi but for this you need to further modify your script or write a dedicated script to find the MAC address of your device. You can submit the MAC address on Canvas and we will request IT to register your device.
 
-### Step 5 - Understanding the Pattern of Using the ESP8266 Library
+### Step 5 - Understanding the Pattern of Using the ESP832 Library
 
 Now you have seen 2 different example sketches using both Serial and WiFi connections. You may begin to see a pattern on how to use the resources:
 
