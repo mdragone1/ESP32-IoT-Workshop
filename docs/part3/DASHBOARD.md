@@ -69,7 +69,7 @@ Now that you have learned about Node-RED Dashboard and Chart types, you are read
 limited capcity, you may want to delete the tabs Chart Intro and Dashboard Intro by double clicking each tab to open up the tab configuration sidebar, where you will find a delete button.
 
 - Turn to the next flow - **Plot DHT Sensor Data**
-- The **mqtt in** node may need to be configured to pull in the config you created in the previous section.is already configured to receive *status* Device Events from the ESP8266 Device Type.
+- The **mqtt in** node may need to be configured to pull in the config you created in the previous section.is already configured to receive *status* Device Events from the ESP32 Device Type.
 - The **Change** nodes extract the ```msg.payload.d.temp``` and ```msg.payload.d.humidity``` values from the JSON object sent over MQTT from the device environmental sensor to the MQTT broker.
 - The environmental sensor values are sent to two charts to plot Temperature and Humidity.
  ![NRD ESP32 DHT chart flow](screenshots/Node-RED-Dashboard-DHT-flow.png)
