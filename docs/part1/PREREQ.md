@@ -28,6 +28,7 @@ You need the following hardware to work through the workshop:
 
 - ESP32
 - NeoPixel RGB LED (or any other chainable RGB/RGBW LED based on ws2812b or sk6812 chips ), such as [this from Adafruit](https://www.adafruit.com/product/1734) (Search for **Neopixel 8mm or 5mm** - often sold in packs of 5)
+  The LED we are using this year (2024/25) is not a NeoPixel but a RGB 5mm LED Common Anode from Switch Electronics See link:   https://www.switchelectronics.co.uk/products/rgb-5mm-led-common-anode?currency=GBP&variant=45356647678261&stkn=bbf1d20e1ed7&gad_source=1&gbraid=0AAAAAqEgT0D7UvQVtPwsikIBhB7H4bFe1&gclid=Cj0KCQjw4Oe4BhCcARIsADQ0cslP3T6Gr8zZ9_26iMx1aVwpPH4Cr72SDgCGR1ZSa1of0CRGnvDoInkaAjYbEALw_wcB
 - DHT11 Temperature / Humidity Sensor (search for **DHT11 or DHT22**)
 - 6 x Female to Female jumper wires (search for **dupont cable f2f or f-f** - usually sold in packs of 40 cables)
 - MicroUSB cable (Please ensure it is a data cable, not just a power cable)
