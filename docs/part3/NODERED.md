@@ -24,7 +24,7 @@ When you start Node-RED:
 - On the left side is a palette of nodes that you can drag onto the flow
 - You can wire nodes together to create a program
 - Double Click on the **Flow 1** tab header
-- Rename this tab from **Flow 1** to **Receive ESP8266 Data**
+- Rename this tab from **Flow 1** to **Receive ESP32 Data**
  ![IoT Starter Flow 1](screenshots/Starter-RenameTab.png)
 
 ### Step 2 - How to secure your Node-RED Editor
