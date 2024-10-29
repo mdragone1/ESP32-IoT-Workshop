@@ -31,7 +31,7 @@ The following step 1 helps you to configure a MQTT input node over a secure conn
 ---
 
 ### Step 1 - Configure an MQTT Input in Node-RED
-
+- Note: You do not need to secure your commuication to Node-RED if you did not implement secure communication with the MQTT broker in Step 2
 - From the Input category of the left Node-RED palette, find and select an **mqtt in node** and drag it onto your Node-RED flow.
 - Double-click on the MQTT node. An **Edit mqtt in node** sidebar will open.
 - Click the pencil icon next to the Server property to configure the MQTT server properties - this will open the **mqtt-broker node** sidebar:
