@@ -22,6 +22,11 @@ This lab exercise will show you how to use the Arduino IDE with the ESP32 plugin
 
 This lab exercise will show you how to connection your ESP32 to a local WiFi network. This Lab will also introduce the Serial Monitor, which allows you to see output from a running application.
 
+IMPORTANT NOTE: Eduroam and other WIFi networks managed by HWU (such as HWUResearch) will block some ports, crucially 1883 and the other ports needed by MQTT.
+To solve the issue, you can create a network using your phone as hot spot. 
+The IoT application you are going to build will use very little data but if you want a free network you can connect
+your phone to the _Cloud, after creating an account on that service.
+
 - Estimated duration: 15 min
 - Practical: [**WiFi Scanning and Connectivity**](WIFI.md)
 
